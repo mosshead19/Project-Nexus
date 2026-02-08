@@ -184,12 +184,14 @@
     }
   });
 
-  /**
-   * Navmenu Scrollspy
-   */
+
   let navmenulinks = document.querySelectorAll('.navmenu a');
 
   function navmenuScrollspy() {
+    
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    if (currentPage !== 'index.html') return;
+
     navmenulinks.forEach(navmenulink => {
       if (!navmenulink.hash) return;
       let section = document.querySelector(navmenulink.hash);
@@ -205,5 +207,38 @@
   }
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
+
+  /**
+   * Set active nav link based on current page URL
+   */
+  function setActiveNavLink() {
+    const currentPath = window.location.pathname;
+    const currentPage = currentPath.split('/').pop() || 'index.html';
+
+    // Remove active class from all nav links
+    document.querySelectorAll('.navmenu a').forEach(link => {
+      link.classList.remove('active');
+    });
+
+    // Add active class to the link that matches current page
+    document.querySelectorAll('.navmenu a').forEach(link => {
+      const href = link.getAttribute('href');
+      if (href) {
+        // Handle direct page links (no hash)
+        if (!href.includes('#') && (href === currentPage || href === './' + currentPage)) {
+          link.classList.add('active');
+        }
+        // Handle hash links on index page
+        else if (href.includes('#') && currentPage === 'index.html') {
+          const hash = href.split('#')[1];
+          if (hash && window.location.hash === '#' + hash) {
+            link.classList.add('active');
+          }
+        }
+      }
+    });
+  }
+
+  window.addEventListener('load', setActiveNavLink);
 
 })();
