@@ -98,24 +98,8 @@
                 }
               </script>
 
-              <div class="swiper-wrapper align-items-center">
-
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio/app-1.jpg" alt="">
-                </div>
-
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio/product-1.jpg" alt="">
-                </div>
-
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio/branding-1.jpg" alt="">
-                </div>
-
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio/books-1.jpg" alt="">
-                </div>
-
+              <div class="swiper-wrapper align-items-center" id="project-images">
+                <!-- Images will be loaded dynamically -->
               </div>
               <div class="swiper-pagination"></div>
             </div>
@@ -124,28 +108,16 @@
           <div class="col-lg-4">
             <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
               <h3>Project Information</h3>
-              <ul>
-                <li><strong>Category</strong>: Extension Service</li>
-                <li><strong>Creator</strong>: Juan Dela Cruz</li>
-                <li><strong>Year Level</strong>: 3rd Year</li>
-                <li><strong>Project Date</strong>: January 2026</li>
-                <li><strong>Technologies</strong>: PHP, MySQL, Bootstrap, JavaScript</li>
+              <ul id="project-info">
+                <!-- Project info will be loaded dynamically -->
               </ul>
             </div>
             <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
-              <h2>Inventory Management System</h2>
-              <p>
-                A comprehensive web-based inventory management system developed for a local hardware store in Puerto Princesa. This project aims to streamline inventory tracking, improve stock management, and provide real-time sales analytics.
-              </p>
-              <p>
-                The system features automated stock alerts, barcode scanning integration, multi-user support with different access levels, and detailed reporting capabilities. It significantly reduced manual inventory errors and improved operational efficiency for the business partner.
-              </p>
-              <div class="tech-tags mt-3">
-                <span class="badge bg-primary">PHP</span>
-                <span class="badge bg-primary">MySQL</span>
-                <span class="badge bg-primary">Bootstrap</span>
-                <span class="badge bg-primary">JavaScript</span>
-                <span class="badge bg-primary">AJAX</span>
+              <h2 id="project-title"><!-- Title will be loaded dynamically --></h2>
+              <p id="project-description"><!-- Description will be loaded dynamically --></p>
+              <p id="project-full-description"><!-- Full description will be loaded dynamically --></p>
+              <div class="tech-tags mt-3" id="project-technologies">
+                <!-- Technologies will be loaded dynamically -->
               </div>
             </div>
           </div>
@@ -182,6 +154,83 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <!-- Projects Data -->
+  <script src="assets/js/projects-data.js"></script>
+
+  <!-- Load Project Details -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Get project ID from URL
+      const params = new URLSearchParams(window.location.search);
+      const projectId = params.get('id');
+
+      if (!projectId || !projects[projectId]) {
+        // If no valid project ID, redirect to projects page
+        window.location.href = 'projects.html';
+        return;
+      }
+
+      // Get project data
+      const project = projects[projectId];
+
+      // Populate page title
+      document.title = project.title + ' - Project Nexus';
+
+      // Populate breadcrumb
+      const breadcrumbItem = document.querySelector('.breadcrumbs ol li:last-child');
+      if (breadcrumbItem) {
+        breadcrumbItem.textContent = project.title;
+      }
+
+      // Populate images for swiper
+      const imagesContainer = document.getElementById('project-images');
+      project.images.forEach(image => {
+        const slide = document.createElement('div');
+        slide.className = 'swiper-slide';
+        slide.innerHTML = `<img src="${image}" alt="${project.title}">`;
+        imagesContainer.appendChild(slide);
+      });
+
+      // Populate project info
+      const projectInfo = document.getElementById('project-info');
+      const categoryLabels = {
+        'extension': 'Extension Service',
+        'member': 'Member Project',
+        'community': 'Community Project'
+      };
+      const techCategoryLabels = {
+        'web': 'Web Development',
+        'mobile': 'Mobile Development',
+        'ai': 'AI/Machine Learning',
+        'game': 'Game Development',
+        'desktop': 'Desktop Application',
+        'iot': 'IoT/Hardware'
+      };
+      
+      projectInfo.innerHTML = `
+        <li><strong>Category</strong>: ${categoryLabels[project.projectCategory] || project.projectCategory}</li>
+        <li><strong>Creator</strong>: ${project.creator}</li>
+        <li><strong>Year Level</strong>: ${project.yearLevel}</li>
+        <li><strong>Project Date</strong>: ${project.projectDate}</li>
+        <li><strong>Tech Category</strong>: ${techCategoryLabels[project.techCategory] || project.techCategory}</li>
+      `;
+
+      // Populate project details
+      document.getElementById('project-title').textContent = project.title;
+      document.getElementById('project-description').textContent = project.description;
+      document.getElementById('project-full-description').textContent = project.fullDescription;
+
+      // Populate technologies
+      const techContainer = document.getElementById('project-technologies');
+      project.technologies.forEach(tech => {
+        const badge = document.createElement('span');
+        badge.className = 'badge bg-primary';
+        badge.textContent = tech;
+        techContainer.appendChild(badge);
+      });
+    });
+  </script>
 
 </body>
 

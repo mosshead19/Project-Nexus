@@ -98,20 +98,8 @@
                 }
               </script>
 
-              <div class="swiper-wrapper align-items-center">
-
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio/app-1.jpg" alt="">
-                </div>
-
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio/product-1.jpg" alt="">
-                </div>
-
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio/branding-1.jpg" alt="">
-                </div>
-
+              <div class="swiper-wrapper align-items-center" id="event-images">
+                <!-- Images will be loaded dynamically -->
               </div>
               <div class="swiper-pagination"></div>
             </div>
@@ -120,28 +108,16 @@
           <div class="col-lg-4">
             <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
               <h3>Event Information</h3>
-              <ul>
-                <li><strong>Event Type</strong>: Training We Conduct</li>
-                <li><strong>Date</strong>: January 15, 2026</li>
-                <li><strong>Location</strong>: PSU CS Lab</li>
-                <li><strong>Participants</strong>: 45 Students</li>
-                <li><strong>Duration</strong>: 8 hours</li>
+              <ul id="event-info">
+                <!-- Event info will be loaded dynamically -->
               </ul>
             </div>
             <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
-              <h2>Introduction to Modern Web Development</h2>
-              <p>
-                A comprehensive workshop covering HTML5, CSS3, JavaScript ES6+, and responsive design principles for beginners. This hands-on training aims to equip Computer Science students with fundamental web development skills essential for modern web applications.
-              </p>
-              <p>
-                Participants learned about semantic HTML, CSS flexbox and grid systems, JavaScript DOM manipulation, and best practices for creating responsive websites that work across all devices.
-              </p>
-              <div class="tech-tags mt-3">
-                <span class="badge bg-primary">HTML5</span>
-                <span class="badge bg-primary">CSS3</span>
-                <span class="badge bg-primary">JavaScript</span>
-                <span class="badge bg-primary">Bootstrap</span>
-                <span class="badge bg-primary">Responsive Design</span>
+              <h2 id="event-title"><!-- Title will be loaded dynamically --></h2>
+              <p id="event-description"><!-- Description will be loaded dynamically --></p>
+              <p id="event-full-description"><!-- Full description will be loaded dynamically --></p>
+              <div class="tech-tags mt-3" id="event-technologies">
+                <!-- Technologies will be loaded dynamically -->
               </div>
             </div>
           </div>
@@ -178,6 +154,70 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <!-- Events Data -->
+  <script src="assets/js/events-data.js"></script>
+
+  <!-- Load Event Details -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Get event ID from URL
+      const params = new URLSearchParams(window.location.search);
+      const eventId = params.get('id');
+
+      if (!eventId || !events[eventId]) {
+        // If no valid event ID, redirect to trainings-events page
+        window.location.href = 'trainings-events.html';
+        return;
+      }
+
+      // Get event data
+      const event = events[eventId];
+
+      // Populate page title
+      document.title = event.title + ' - Project Nexus';
+
+      // Populate breadcrumb
+      const breadcrumbItem = document.querySelector('.breadcrumbs ol li:last-child');
+      if (breadcrumbItem) {
+        breadcrumbItem.textContent = event.title;
+      }
+
+      // Populate images for swiper
+      const imagesContainer = document.getElementById('event-images');
+      event.images.forEach(image => {
+        const slide = document.createElement('div');
+        slide.className = 'swiper-slide';
+        slide.innerHTML = `<img src="${image}" alt="${event.title}">`;
+        imagesContainer.appendChild(slide);
+      });
+
+      // Populate event info
+      const eventInfo = document.getElementById('event-info');
+      const categoryLabel = event.category === 'conducted' ? 'Training We Conduct' : 'Training We Attended';
+      eventInfo.innerHTML = `
+        <li><strong>Event Type</strong>: ${categoryLabel}</li>
+        <li><strong>Date</strong>: ${event.date}</li>
+        <li><strong>Location</strong>: ${event.location}</li>
+        <li><strong>Participants</strong>: ${event.participants}</li>
+        <li><strong>Duration</strong>: ${event.duration}</li>
+      `;
+
+      // Populate event details
+      document.getElementById('event-title').textContent = event.title;
+      document.getElementById('event-description').textContent = event.description;
+      document.getElementById('event-full-description').textContent = event.fullDescription;
+
+      // Populate technologies
+      const techContainer = document.getElementById('event-technologies');
+      event.technologies.forEach(tech => {
+        const badge = document.createElement('span');
+        badge.className = 'badge bg-primary';
+        badge.textContent = tech;
+        techContainer.appendChild(badge);
+      });
+    });
+  </script>
 
 </body>
 
