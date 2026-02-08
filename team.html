@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Our Team - Project Nexus</title>
+  <meta name="description" content="Meet the faculty advisors and student members of Project Nexus - Palawan State University Computer Science Organization">
+  <meta name="keywords" content="Project Nexus, team, members, faculty, students, computer science, PSU, Palawan State University">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    .team-carousel .swiper-slide {
+      padding: 20px 10px;
+    }
+    
+    .member {
+      text-align: center;
+      margin-bottom: 20px;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .member:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 5px 40px rgba(0, 163, 169, 0.3);
+    }
+
+    .member .pic {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .member .pic img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      transition: all 0.4s ease;
+    }
+
+    .member:hover .pic img {
+      transform: scale(1.1);
+    }
+
+    .member .member-info {
+      padding: 25px 20px;
+    }
+
+    .member .member-info h4 {
+      font-weight: 700;
+      margin-bottom: 5px;
+      font-size: 20px;
+      color: #04124a;
+    }
+
+    .member .member-info span {
+      display: block;
+      font-size: 14px;
+      font-weight: 500;
+      color: #00a3a9;
+      margin-bottom: 8px;
+    }
+
+    .member .member-info p.small {
+      font-size: 13px;
+      color: #6c757d;
+      margin-bottom: 15px;
+      font-style: italic;
+    }
+
+    .member .social {
+      margin-top: 15px;
+    }
+
+    .member .social a {
+      color: #265254;
+      margin: 0 5px;
+      font-size: 18px;
+      transition: 0.3s;
+    }
+
+    .member .social a:hover {
+      color: #00a3a9;
+      transform: scale(1.2);
+      display: inline-block;
+    }
+
+    .team-section-divider {
+      margin: 60px 0 40px;
+      text-align: center;
+    }
+
+    .team-section-divider h3 {
+      color: #04124a;
+      font-size: 32px;
+      font-weight: 700;
+      position: relative;
+      display: inline-block;
+      padding: 0 30px;
+    }
+
+    .team-section-divider h3:before,
+    .team-section-divider h3:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 100px;
+      height: 2px;
+      background: #00a3a9;
+    }
+
+    .team-section-divider h3:before {
+      left: -110px;
+    }
+
+    .team-section-divider h3:after {
+      right: -110px;
+    }
+
+    /* Swiper Navigation Buttons */
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: #00a3a9;
+      background: white;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .swiper-button-next:after,
+    .swiper-button-prev:after {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .swiper-button-next:hover,
+    .swiper-button-prev:hover {
+      background: #00a3a9;
+      color: white;
+    }
+
+    .swiper-pagination-bullet {
+      background: #00a3a9;
+    }
+
+    .swiper-pagination-bullet-active {
+      background: #04124a;
+    }
+  </style>
+</head>
+
+<body class="team-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto">
+          <img src="assets/img/ProjectNLogo.png" alt="Project Nexus Logo" style="height: 120px; width: auto; max-width: 100%;">
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="what-we-do.html">What We Do</a></li>
+          <li><a href="trainings-events.html">Training & Events</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="team.html" class="active">Team</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <a class="cta-btn" href="index.html#contact">Get Started</a>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title dark-background">
+      <div class="container position-relative">
+        <h1>Our Team</h1>
+        <p>Meet the passionate faculty advisors and student members driving innovation at Project Nexus</p>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li class="current">Team</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- Team Section -->
+    <section id="team" class="team section light-background">
+
+      <div class="container">
+
+        <!-- Faculty Advisors Section -->
+        <div class="team-section-divider" data-aos="fade-up">
+          <h3>Faculty Advisors</h3>
+        </div>
+
+        <!-- Faculty Carousel -->
+        <div class="swiper team-carousel" data-aos="fade-up" data-aos-delay="100">
+          <div class="swiper-wrapper">
+
+            <!-- Faculty Member 1 -->
+            <div class="swiper-slide">
+              <div class="member">
+                <div class="pic"><img src="assets/img/team/team-1.jpg" class="img-fluid" alt="Prof. Maria Santos"></div>
+                <div class="member-info">
+                  <h4>Prof. Maria Santos</h4>
+                  <span>Chief Advisor</span>
+                  <p class="small">Software Engineering & Project Management</p>
+                  <div class="social">
+                    <a href=""><i class="bi bi-linkedin"></i></a>
+                    <a href=""><i class="bi bi-envelope"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End Faculty Member -->
+
+            <!-- Faculty Member 2 -->
+            <div class="swiper-slide">
+              <div class="member">
+                <div class="pic"><img src="assets/img/team/team-2.jpg" class="img-fluid" alt="Prof. Roberto Cruz"></div>
+                <div class="member-info">
+                  <h4>Prof. Roberto Cruz</h4>
+                  <span>Technical Advisor</span>
+                  <p class="small">Web Development & Cloud Computing</p>
+                  <div class="social">
+                    <a href=""><i class="bi bi-linkedin"></i></a>
+                    <a href=""><i class="bi bi-envelope"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End Faculty Member -->
+
+            <!-- Faculty Member 3 -->
+            <div class="swiper-slide">
+              <div class="member">
+                <div class="pic"><img src="assets/img/team/team-3.jpg" class="img-fluid" alt="Prof. Ana Reyes"></div>
+                <div class="member-info">
+                  <h4>Prof. Ana Reyes</h4>
+                  <span>Research Advisor</span>
+                  <p class="small">AI/ML & Data Science</p>
+                  <div class="social">
+                    <a href=""><i class="bi bi-linkedin"></i></a>
+                    <a href=""><i class="bi bi-envelope"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End Faculty Member -->
+
+            <!-- Faculty Member 4 -->
+            <div class="swiper-slide">
+              <div class="member">
+                <div class="pic"><img src="assets/img/team/team-1.jpg" class="img-fluid" alt="Prof. James Mendoza"></div>
+                <div class="member-info">
+                  <h4>Prof. James Mendoza</h4>
+                  <span>Innovation Advisor</span>
+                  <p class="small">Mobile Development & UX Design</p>
+                  <div class="social">
+                    <a href=""><i class="bi bi-linkedin"></i></a>
+                    <a href=""><i class="bi bi-envelope"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End Faculty Member -->
+
+          </div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div><!-- End Faculty Carousel -->
+
+        <!-- Student Officers Section -->
+        <div class="team-section-divider" data-aos="fade-up">
+          <h3>Student Officers</h3>
+        </div>
+
+        <!-- Officers Carousel -->
+        <div class="swiper team-carousel" data-aos="fade-up" data-aos-delay="100">
+          <div class="swiper-wrapper">
+
+            <!-- Officer 1 -->
+            <div class="swiper-slide">
+              <div class="member">
+                <div class="pic"><img src="assets/img/team/team-2.jpg" class="img-fluid" alt="John Carlo Rivera"></div>
+                <div class="member-info">
+                  <h4>John Carlo Rivera</h4>
+                  <span>President</span>
+                  <p class="small">4th Year CS</p>
+                  <div class="social">
+                    <a href=""><i class="bi bi-facebook"></i></a>
+                    <a href=""><i class="bi bi-linkedin"></i></a>
+                    <a href=""><i class="bi bi-github"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End Officer -->
+
+            <!-- Officer 2 -->
+            <div class="swiper-slide">
+              <div class="member">
+                <div class="pic"><img src="assets/img/team/team-3.jpg" class="img-fluid" alt="Michelle Tan"></div>
+                <div class="member-info">
+                  <h4>Michelle Tan</h4>
+                  <span>Vice President</span>
+                  <p class="small">4th Year CS</p>
+                  <div class="social">
+                    <a href=""><i class="bi bi-facebook"></i></a>
+                    <a href=""><i class="bi bi-linkedin"></i></a>
+                    <a href=""><i class="bi bi-github"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End Officer -->
+
+            <!-- Officer 3 -->
+            <div class="swiper-slide">
+              <div class="member">
+                <div class="pic"><img src="assets/img/team/team-1.jpg" class="img-fluid" alt="Rafael Gomez"></div>
+                <div class="member-info">
+                  <h4>Rafael Gomez</h4>
+                  <span>Technical Lead</span>
+                  <p class="small">3rd Year CS</p>
+                  <div class="social">
+                    <a href=""><i class="bi bi-facebook"></i></a>
+                    <a href=""><i class="bi bi-linkedin"></i></a>
+                    <a href=""><i class="bi bi-github"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End Officer -->
+
+            <!-- Officer 4 -->
+            <div class="swiper-slide">
+              <div class="member">
+                <div class="pic"><img src="assets/img/team/team-2.jpg" class="img-fluid" alt="Sarah Lim"></div>
+                <div class="member-info">
+                  <h4>Sarah Lim</h4>
+                  <span>Secretary</span>
+                  <p class="small">3rd Year CS</p>
+                  <div class="social">
+                    <a href=""><i class="bi bi-facebook"></i></a>
+                    <a href=""><i class="bi bi-linkedin"></i></a>
+                    <a href=""><i class="bi bi-github"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End Officer -->
+
+            <!-- Officer 5 -->
+            <div class="swiper-slide">
+              <div class="member">
+                <div class="pic"><img src="assets/img/team/team-3.jpg" class="img-fluid" alt="Mark Daniel Cruz"></div>
+                <div class="member-info">
+                  <h4>Mark Daniel Cruz</h4>
+                  <span>Treasurer</span>
+                  <p class="small">3rd Year CS</p>
+                  <div class="social">
+                    <a href=""><i class="bi bi-facebook"></i></a>
+                    <a href=""><i class="bi bi-linkedin"></i></a>
+                    <a href=""><i class="bi bi-github"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End Officer -->
+
+            <!-- Officer 6 -->
+            <div class="swiper-slide">
+              <div class="member">
+                <div class="pic"><img src="assets/img/team/team-1.jpg" class="img-fluid" alt="Angela Fernandez"></div>
+                <div class="member-info">
+                  <h4>Angela Fernandez</h4>
+                  <span>Events Coordinator</span>
+                  <p class="small">3rd Year CS</p>
+                  <div class="social">
+                    <a href=""><i class="bi bi-facebook"></i></a>
+                    <a href=""><i class="bi bi-linkedin"></i></a>
+                    <a href=""><i class="bi bi-github"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End Officer -->
+
+            <!-- Officer 7 -->
+            <div class="swiper-slide">
+              <div class="member">
+                <div class="pic"><img src="assets/img/team/team-2.jpg" class="img-fluid" alt="Joshua Santos"></div>
+                <div class="member-info">
+                  <h4>Joshua Santos</h4>
+                  <span>Project Manager</span>
+                  <p class="small">4th Year CS</p>
+                  <div class="social">
+                    <a href=""><i class="bi bi-facebook"></i></a>
+                    <a href=""><i class="bi bi-linkedin"></i></a>
+                    <a href=""><i class="bi bi-github"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End Officer -->
+
+          </div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div><!-- End Officers Carousel -->
+
+        <!-- Members Section -->
+        <div class="team-section-divider" data-aos="fade-up">
+          <h3>Members</h3>
+        </div>
+
+        <!-- Members Carousel -->
+        <div class="swiper team-carousel" data-aos="fade-up" data-aos-delay="100">
+          <div class="swiper-wrapper">
+
+            <!-- Member 1 -->
+            <div class="swiper-slide">
+              <div class="member">
+                <div class="pic"><img src="assets/img/team/team-3.jpg" class="img-fluid" alt="Kristine Ramirez"></div>
+                <div class="member-info">
+                  <h4>Kristine Ramirez</h4>
+                  <span>Design Specialist</span>
+                  <p class="small">2nd Year CS</p>
+                  <div class="social">
+                    <a href=""><i class="bi bi-facebook"></i></a>
+                    <a href=""><i class="bi bi-linkedin"></i></a>
+                    <a href=""><i class="bi bi-github"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End Member -->
+
+            <!-- Member 2 -->
+            <div class="swiper-slide">
+              <div class="member">
+                <div class="pic"><img src="assets/img/team/team-1.jpg" class="img-fluid" alt="Daniel Aquino"></div>
+                <div class="member-info">
+                  <h4>Daniel Aquino</h4>
+                  <span>DevOps Specialist</span>
+                  <p class="small">3rd Year CS</p>
+                  <div class="social">
+                    <a href=""><i class="bi bi-facebook"></i></a>
+                    <a href=""><i class="bi bi-linkedin"></i></a>
+                    <a href=""><i class="bi bi-github"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End Member -->
+
+            <!-- Member 3 -->
+            <div class="swiper-slide">
+              <div class="member">
+                <div class="pic"><img src="assets/img/team/team-2.jpg" class="img-fluid" alt="Patricia Valdez"></div>
+                <div class="member-info">
+                  <h4>Patricia Valdez</h4>
+                  <span>Marketing Specialist</span>
+                  <p class="small">2nd Year CS</p>
+                  <div class="social">
+                    <a href=""><i class="bi bi-facebook"></i></a>
+                    <a href=""><i class="bi bi-linkedin"></i></a>
+                    <a href=""><i class="bi bi-github"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End Member -->
+
+            <!-- Member 4 -->
+            <div class="swiper-slide">
+              <div class="member">
+                <div class="pic"><img src="assets/img/team/team-3.jpg" class="img-fluid" alt="Carlos Morales"></div>
+                <div class="member-info">
+                  <h4>Carlos Morales</h4>
+                  <span>Backend Developer</span>
+                  <p class="small">3rd Year CS</p>
+                  <div class="social">
+                    <a href=""><i class="bi bi-facebook"></i></a>
+                    <a href=""><i class="bi bi-linkedin"></i></a>
+                    <a href=""><i class="bi bi-github"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End Member -->
+
+            <!-- Member 5 -->
+            <div class="swiper-slide">
+              <div class="member">
+                <div class="pic"><img src="assets/img/team/team-1.jpg" class="img-fluid" alt="Sophia Garcia"></div>
+                <div class="member-info">
+                  <h4>Sophia Garcia</h4>
+                  <span>Frontend Developer</span>
+                  <p class="small">2nd Year CS</p>
+                  <div class="social">
+                    <a href=""><i class="bi bi-facebook"></i></a>
+                    <a href=""><i class="bi bi-linkedin"></i></a>
+                    <a href=""><i class="bi bi-github"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End Member -->
+
+            <!-- Member 6 -->
+            <div class="swiper-slide">
+              <div class="member">
+                <div class="pic"><img src="assets/img/team/team-2.jpg" class="img-fluid" alt="Miguel Torres"></div>
+                <div class="member-info">
+                  <h4>Miguel Torres</h4>
+                  <span>Mobile Developer</span>
+                  <p class="small">4th Year CS</p>
+                  <div class="social">
+                    <a href=""><i class="bi bi-facebook"></i></a>
+                    <a href=""><i class="bi bi-linkedin"></i></a>
+                    <a href=""><i class="bi bi-github"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End Member -->
+
+            <!-- Member 7 -->
+            <div class="swiper-slide">
+              <div class="member">
+                <div class="pic"><img src="assets/img/team/team-3.jpg" class="img-fluid" alt="Isabelle Mendoza"></div>
+                <div class="member-info">
+                  <h4>Isabelle Mendoza</h4>
+                  <span>QA Tester</span>
+                  <p class="small">2nd Year CS</p>
+                  <div class="social">
+                    <a href=""><i class="bi bi-facebook"></i></a>
+                    <a href=""><i class="bi bi-linkedin"></i></a>
+                    <a href=""><i class="bi bi-github"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End Member -->
+
+            <!-- Member 8 -->
+            <div class="swiper-slide">
+              <div class="member">
+                <div class="pic"><img src="assets/img/team/team-1.jpg" class="img-fluid" alt="Lance Bautista"></div>
+                <div class="member-info">
+                  <h4>Lance Bautista</h4>
+                  <span>Documentation Specialist</span>
+                  <p class="small">3rd Year CS</p>
+                  <div class="social">
+                    <a href=""><i class="bi bi-facebook"></i></a>
+                    <a href=""><i class="bi bi-linkedin"></i></a>
+                    <a href=""><i class="bi bi-github"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End Member -->
+
+          </div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div><!-- End Members Carousel -->
+
+        <!-- Join Us Section -->
+        <div class="row mt-5" data-aos="fade-up">
+          <div class="col-12">
+            <div class="text-center p-5" style="background: linear-gradient(135deg, #00a3a9 0%, #04124a 100%); border-radius: 15px; color: white;">
+              <h3 class="mb-3">Want to Join Project Nexus?</h3>
+              <p class="mb-4">We're always looking for passionate and dedicated Computer Science students to join our team!</p>
+              <a href="index.html#contact" class="btn btn-light btn-lg">Get in Touch</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /Team Section -->
+
+  </main>
+
+  <footer id="footer" class="footer dark-background">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <span class="sitename">Project Nexus</span>
+          </a>
+          <div class="footer-contact pt-3">
+            <p>Palawan State University</p>
+            <p>Puerto Princesa City, Palawan</p>
+            <p class="mt-3"><strong>Phone:</strong> <span>+63 XXX XXX XXXX</span></p>
+            <p><strong>Email:</strong> <span>projectnexus@psu.edu.ph</span></p>
+          </div>
+          <div class="social-links d-flex mt-4">
+            <a href=""><i class="bi bi-twitter-x"></i></a>
+            <a href=""><i class="bi bi-facebook"></i></a>
+            <a href=""><i class="bi bi-instagram"></i></a>
+            <a href=""><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About us</a></li>
+            <li><a href="what-we-do.html">What We Do</a></li>
+            <li><a href="#">Terms of service</a></li>
+            <li><a href="#">Privacy policy</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><a href="trainings-events.html">Training & Events</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-12 footer-newsletter">
+          <h4>Our Newsletter</h4>
+          <p>Subscribe to our newsletter and receive the latest news about our activities and events!</p>
+          <form action="forms/newsletter.php" method="post" class="php-email-form">
+            <div class="newsletter-form"><input type="email" name="email"><input type="submit" value="Subscribe"></div>
+            <div class="loading">Loading</div>
+            <div class="error-message"></div>
+            <div class="sent-message">Your subscription request has been sent. Thank you!</div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">Project Nexus</strong> <span>All Rights Reserved</span></p>
+      <div class="credits">
+        Designed by Project Nexus Team | Palawan State University
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- Team Carousel Initialization -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Initialize all team carousels
+      const teamCarousels = document.querySelectorAll('.team-carousel');
+      
+      teamCarousels.forEach(function(carousel) {
+        new Swiper(carousel, {
+          slidesPerView: 1,
+          spaceBetween: 30,
+          loop: true,
+          autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+          },
+          pagination: {
+            el: carousel.querySelector('.swiper-pagination'),
+            clickable: true,
+          },
+          navigation: {
+            nextEl: carousel.querySelector('.swiper-button-next'),
+            prevEl: carousel.querySelector('.swiper-button-prev'),
+          },
+          breakpoints: {
+            640: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+            },
+            992: {
+              slidesPerView: 3,
+              spaceBetween: 30,
+            },
+            1200: {
+              slidesPerView: 4,
+              spaceBetween: 30,
+            }
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+
+</html>
