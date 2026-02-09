@@ -194,7 +194,7 @@
 
       // Populate event info
       const eventInfo = document.getElementById('event-info');
-      const categoryLabel = event.category === 'conducted' ? 'Training We Conduct' : 'Training We Attended';
+      const categoryLabel = event.category === 'conducted' ? 'conducted' : 'attended';
       eventInfo.innerHTML = `
         <li><strong>Event Type</strong>: ${categoryLabel}</li>
         <li><strong>Date</strong>: ${event.date}</li>
