@@ -56,7 +56,7 @@ const projects = {
     projectCategory: "community"
   },
   4: {
-    title: "Restaurant POS System",
+    title: "WILMS User Training & On-Premise Deployment",
     creator: "Team Alpha",
     yearLevel: "3rd Year",
     category: "Extension Service",
@@ -67,8 +67,8 @@ const projects = {
       "assets/img/portfolio/app-2.jpg",
       "assets/img/portfolio/product-2.jpg"
     ],
-    description: `Point-of-sale system for a local restaurant with order management, kitchen display, and sales reporting.`,
-    fullDescription: `A comprehensive POS system designed specifically for restaurant operations. Features include table management, order taking with customization options, kitchen display system (KDS) for efficient food preparation, split billing, multiple payment methods, inventory tracking, and detailed sales analytics. The system improved order accuracy and reduced wait times by 30% for the partner restaurant.`,
+    description: `WILMS User Training & On-Premise Deployment for efficient learning management.`,
+    fullDescription: `A comprehensive training and deployment project for the WILMS system, designed to enhance user experience and streamline on-premise operations. Features include user training sessions, system setup, customization, and ongoing support to ensure smooth adoption and effective use of the platform.`,
     technologies: ["Laravel", "MySQL", "Vue.js", "Tailwind CSS"],
     techCategory: "web",
     projectCategory: "extension"
