@@ -1549,6 +1549,40 @@ section,
   margin-bottom: 0;
 }
 
+.portfolio .portfolio-content .portfolio-info .event-meta {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 14px;
+  color: #6c757d;
+  margin-top: 8px;
+  line-height: 1.5;
+}
+
+.portfolio .portfolio-content .portfolio-info .event-meta span {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.portfolio .portfolio-content .portfolio-info .event-meta .separator {
+  color: #dee2e6;
+  margin: 0 2px;
+  font-weight: 300;
+}
+
+.portfolio .portfolio-content .portfolio-info .event-meta .date,
+.portfolio .portfolio-content .portfolio-info .event-meta .creator {
+  font-weight: 500;
+}
+
+.portfolio .portfolio-content .portfolio-info .event-meta .status,
+.portfolio .portfolio-content .portfolio-info .event-meta .category {
+  color: var(--accent-color);
+  font-weight: 500;
+}
+
 .portfolio .portfolio-content .portfolio-overlay {
   opacity: 0;
   position: absolute;
