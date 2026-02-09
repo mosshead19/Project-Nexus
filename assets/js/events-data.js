@@ -1,8 +1,66 @@
 // Events Data
 const events = {
   1: {
+    title: "Project Nexus Oath Taking",
+    date: "October 7, 2025",
+    location: "College of Sciences 2nd Floor",
+    type: "We attend",
+    participants: "20 Students and faculties",
+    image: "assets/img/portfolio/oath-taking/oath-1.jpg",
+    images: [
+      "assets/img/portfolio/oath-taking/oath-1.jpg",
+      "assets/img/portfolio/oath-taking/oath-2.jpg",
+      "assets/img/portfolio/oath-taking/oath-3.jpg",
+      "assets/img/portfolio/oath-taking/oath-4.jpg",
+      "assets/img/portfolio/oath-taking/oath-6.jpg"
+    ],
+    description: `Create cross-platform mobile applications for iOS and Android using React Native framework.`,
+    fullDescription: `This comprehensive workshop taught students how to build mobile apps using React Native. Topics included React fundamentals, component lifecycle, state management, navigation, API integration, and publishing apps to app stores. Students built a functional mobile app as their final project.`,
+    technologies: [],
+    category: "attended"
+  },
+  
+  2: {
+    title: "SYNC & DEPLOY: Collaborative Workflow Workshop",
+    date: "October 24, 2025",
+    location: "NIT 4",
+    type: "We Conduct",
+    participants: "3 Members",
+    duration: "4 hours",
+    image: "assets/img/portfolio/sync-deploy/sd-1.png",
+    images: [
+      "assets/img/portfolio/sync-deploy/sd-1.png",
+      "assets/img/portfolio/sync-deploy/sd-3.png",
+      "assets/img/portfolio/sync-deploy/sd-2.png"
+    ],
+    description: `Intensive training on Docker containers, Docker Compose, and deployment strategies for modern applications.`,
+    fullDescription: `Members learned containerization concepts, creating Docker images, managing containers, networking, volumes, and orchestration basics. The bootcamp included real-world scenarios of deploying microservices, CI/CD integration, and container security best practices.`,
+    technologies: ["Docker", "Containers", "DevOps", "Microservices"],
+    category: "conducted"
+  },
+
+  3: {
+    title: "Project Nexus Annual Meeting",
+    date: "January 22, 2026",
+    location: "NIT 4",
+    type: "We Conduct",
+    participants: "15+ Members",
+    duration: "4 hours",
+    image: "assets/img/portfolio/annual-meeting2026/meeting-1.jpg",
+    images: [
+      "assets/img/portfolio/annual-meeting2026/meeting-1.jpg",
+      "assets/img/portfolio/annual-meeting2026/meeting-2.jpg",
+      
+    ],
+    description: `Project Nexus members participated in AWS certification training to enhance cloud computing skills and infrastructure knowledge.`,
+    fullDescription: `This intensive training covered AWS core services including EC2, S3, RDS, Lambda, and CloudFormation. Participants gained hands-on experience with cloud architecture, security best practices, and cost optimization strategies. The training prepared members for the AWS Certified Cloud Practitioner exam.`,
+    technologies: [],
+    category: "conducted"
+    },
+
+  4: {
     title: "IT Freshman Toolkit: Python Review, Advanced Concepts, and LeetCode Introduction",
-    date: "January 15, 2026",
+    date: "January 6-7, 2026",
     location: "NIT 4",
     type: "We Conduct",
     participants: "30+ Participants",
@@ -23,25 +81,8 @@ const events = {
     technologies: ["Python", "Leetcode", "Programming"],
     category: "conducted"
   },
-  2: {
-    title: "Project Nexus Annual Meeting",
-    date: "January 22, 2026",
-    location: "NIT 4",
-    type: "We Conduct",
-    participants: "15+ Members",
-    duration: "4 hours",
-    image: "assets/img/portfolio/annual-meeting2026/meeting-1.jpg",
-    images: [
-      "assets/img/portfolio/annual-meeting2026/meeting-1.jpg",
-      "assets/img/portfolio/annual-meeting2026/meeting-2.jpg",
-      
-    ],
-    description: `Project Nexus members participated in AWS certification training to enhance cloud computing skills and infrastructure knowledge.`,
-    fullDescription: `This intensive training covered AWS core services including EC2, S3, RDS, Lambda, and CloudFormation. Participants gained hands-on experience with cloud architecture, security best practices, and cost optimization strategies. The training prepared members for the AWS Certified Cloud Practitioner exam.`,
-    technologies: [],
-    category: "conducted"
-  },
-  3: {
+  
+  5: {
     title: "The Nexus Core: High-Impact Industry Skills Bootcamp",
     date: "February 13, 2026",
     location: "PITBI",
@@ -59,42 +100,4 @@ const events = {
     technologies: ["Git", "GitHub", "Version Control", "Collaboration"],
     category: "conducted"
   },
-  4: {
-    title: "SYNC & DEPLOY: Collaborative Workflow Workshop",
-    date: "October 24, 2025",
-    location: "NIT 4",
-    type: "We Conduct",
-    participants: "3 Members",
-    duration: "4 hours",
-    image: "assets/img/portfolio/sync-deploy/sd-1.png",
-    images: [
-      "assets/img/portfolio/sync-deploy/sd-1.png",
-      "assets/img/portfolio/sync-deploy/sd-3.png",
-      "assets/img/portfolio/sync-deploy/sd-2.png"
-    ],
-    description: `Intensive training on Docker containers, Docker Compose, and deployment strategies for modern applications.`,
-    fullDescription: `Members learned containerization concepts, creating Docker images, managing containers, networking, volumes, and orchestration basics. The bootcamp included real-world scenarios of deploying microservices, CI/CD integration, and container security best practices.`,
-    technologies: ["Docker", "Containers", "DevOps", "Microservices"],
-    category: "conducted"
-  },
-  
-  5: {
-    title: "Project Nexus Oath Taking",
-    date: "October 7, 2025",
-    location: "College of Sciences 2nd Floor",
-    type: "We attend",
-    participants: "20 Students and faculties",
-    image: "assets/img/portfolio/oath-taking/oath-1.jpg",
-    images: [
-      "assets/img/portfolio/oath-taking/oath-1.jpg",
-      "assets/img/portfolio/oath-taking/oath-2.jpg",
-      "assets/img/portfolio/oath-taking/oath-3.jpg",
-      "assets/img/portfolio/oath-taking/oath-4.jpg",
-      "assets/img/portfolio/oath-taking/oath-6.jpg"
-    ],
-    description: `Create cross-platform mobile applications for iOS and Android using React Native framework.`,
-    fullDescription: `This comprehensive workshop taught students how to build mobile apps using React Native. Topics included React fundamentals, component lifecycle, state management, navigation, API integration, and publishing apps to app stores. Students built a functional mobile app as their final project.`,
-    technologies: [],
-    category: "attended"
-  }
 };
