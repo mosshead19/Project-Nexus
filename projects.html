@@ -129,7 +129,7 @@
               <div class="portfolio-img-wrapper">
                 <img src="assets/img/portfolio/app-1.jpg" class="img-fluid" alt="Inventory Management System">
                 <div class="portfolio-overlay">
-                  <a href="assets/img/portfolio/app-1.jpg" title="Inventory Management System" data-gallery="projects-gallery" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="assets/img/portfolio/app-1.jpg" title="Inventory Management System" data-gallery="project-1" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                   <a href="project-details.html?id=1" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
@@ -155,7 +155,7 @@
               <div class="portfolio-img-wrapper">
                 <img src="assets/img/portfolio/books-1.jpg" class="img-fluid" alt="WILMS User Training & On-Premise Deployment">
                 <div class="portfolio-overlay">
-                     <a href="assets/img/portfolio/books-1.jpg" title="WILMS User Training & On-Premise Deployment" data-gallery="projects-gallery" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                     <a href="assets/img/portfolio/books-1.jpg" title="WILMS User Training & On-Premise Deployment" data-gallery="project-4" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                   <a href="project-details.html?id=4" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
@@ -308,6 +308,7 @@
   <div id="preloader"></div>
 
   <!-- Vendor JS Files -->
+  <script src="assets/js/projects-data.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
@@ -316,6 +317,38 @@
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+  <!-- Gallery Loader for Projects - MUST run before main.js -->
+  <script>
+    // Immediately create hidden gallery links (don't wait for DOMContentLoaded)
+    if (typeof projects !== 'undefined') {
+      // Create hidden gallery links for each project
+      Object.keys(projects).forEach(projectId => {
+        const project = projects[projectId];
+        const galleryId = `project-${projectId}`;
+        
+        // Create a container for hidden gallery links
+        const container = document.createElement('div');
+        container.style.display = 'none';
+        container.setAttribute('data-project-gallery', projectId);
+        
+        // Add all images from the project data (skip the first one as it's already visible in the card)
+        project.images.forEach((image, index) => {
+          if (index > 0) { // Skip first image as it's already in the visible card link
+            const link = document.createElement('a');
+            link.href = image;
+            link.className = 'glightbox';
+            link.setAttribute('data-gallery', galleryId);
+            link.setAttribute('title', project.title);
+            container.appendChild(link);
+          }
+        });
+        
+        // Append to body
+        document.body.appendChild(container);
+      });
+    }
+  </script>
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
