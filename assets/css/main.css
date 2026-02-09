@@ -1529,6 +1529,9 @@ section,
   padding: 20px;
   background: #fff;
   border-top: 3px solid var(--accent-color);
+  display: flex;
+  flex-direction: column;
+  min-height: 140px;
 }
 
 .portfolio .portfolio-content .portfolio-info h4 {
@@ -1537,6 +1540,12 @@ section,
   color: var(--heading-color);
   margin-bottom: 10px;
   transition: 0.3s;
+  line-height: 1.5;
+  min-height: 54px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .portfolio .portfolio-content .portfolio-info h4:hover {
@@ -1547,6 +1556,40 @@ section,
   font-size: 14px;
   color: #6c757d;
   margin-bottom: 0;
+}
+
+.portfolio .portfolio-content .portfolio-info .event-meta {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 14px;
+  color: #6c757d;
+  margin-top: auto;
+  line-height: 1.5;
+}
+
+.portfolio .portfolio-content .portfolio-info .event-meta span {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.portfolio .portfolio-content .portfolio-info .event-meta .separator {
+  color: #dee2e6;
+  margin: 0 2px;
+  font-weight: 300;
+}
+
+.portfolio .portfolio-content .portfolio-info .event-meta .date,
+.portfolio .portfolio-content .portfolio-info .event-meta .creator {
+  font-weight: 500;
+}
+
+.portfolio .portfolio-content .portfolio-info .event-meta .status,
+.portfolio .portfolio-content .portfolio-info .event-meta .category {
+  color: var(--accent-color);
+  font-weight: 500;
 }
 
 .portfolio .portfolio-content .portfolio-overlay {
