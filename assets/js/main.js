@@ -6,32 +6,18 @@
 * License: https://bootstrapmade.com/license/
 */
 
-(function() {
-  "use strict";
 
-  /**
-   * Apply .scrolled class to the body as the page is scrolled down
-   */
-  function toggleScrolled() {
-    const selectBody = document.querySelector('body');
-    const selectHeader = document.querySelector('#header');
-    if (!selectHeader.classList.contains('scroll-up-sticky') && !selectHeader.classList.contains('sticky-top') && !selectHeader.classList.contains('fixed-top')) return;
-    window.scrollY > 100 ? selectBody.classList.add('scrolled') : selectBody.classList.remove('scrolled');
-  }
-
-  document.addEventListener('scroll', toggleScrolled);
-  window.addEventListener('load', toggleScrolled);
-
-  /**
-   * Mobile nav toggle
-   */
+function initMobileNav() {
   const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
+  
+  if (!mobileNavToggleBtn) return;
 
   function mobileNavToogle() {
     document.querySelector('body').classList.toggle('mobile-nav-active');
     mobileNavToggleBtn.classList.toggle('bi-list');
     mobileNavToggleBtn.classList.toggle('bi-x');
   }
+  
   mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
 
   /**
@@ -43,7 +29,6 @@
         mobileNavToogle();
       }
     });
-
   });
 
   /**
@@ -57,6 +42,43 @@
       e.stopImmediatePropagation();
     });
   });
+}
+
+
+async function loadNavbar() {
+  try {
+    const response = await fetch('components/navbar.html');
+    if (!response.ok) throw new Error('Failed to load navbar');
+    const html = await response.text();
+    document.getElementById('navbar-placeholder').innerHTML = html;
+    
+    // Initialize mobile nav after navbar is loaded
+    initMobileNav();
+  } catch (error) {
+    console.error('Error loading navbar:', error);
+  }
+}
+
+// Load navbar when DOM is ready
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', loadNavbar);
+} else {
+  loadNavbar();
+}
+
+(function() {
+  "use strict";
+
+ 
+  function toggleScrolled() {
+    const selectBody = document.querySelector('body');
+    const selectHeader = document.querySelector('#header');
+    if (!selectHeader.classList.contains('scroll-up-sticky') && !selectHeader.classList.contains('sticky-top') && !selectHeader.classList.contains('fixed-top')) return;
+    window.scrollY > 100 ? selectBody.classList.add('scrolled') : selectBody.classList.remove('scrolled');
+  }
+
+  document.addEventListener('scroll', toggleScrolled);
+  window.addEventListener('load', toggleScrolled);
 
   /**
    * Preloader
