@@ -4,7 +4,7 @@ const events = {
     title: "Project Nexus Oath Taking",
     date: "October 7, 2025",
     location: "College of Sciences 2nd Floor",
-    type: "We attend",
+    type: "We Conduct",
     participants: "20 Students and faculties",
     image: "assets/img/portfolio/oath-taking/oath-1.jpg",
     images: [
@@ -14,10 +14,10 @@ const events = {
       "assets/img/portfolio/oath-taking/oath-4.jpg",
       "assets/img/portfolio/oath-taking/oath-6.jpg"
     ],
-    description: `Create cross-platform mobile applications for iOS and Android using React Native framework.`,
-    fullDescription: `This comprehensive workshop taught students how to build mobile apps using React Native. Topics included React fundamentals, component lifecycle, state management, navigation, API integration, and publishing apps to app stores. Students built a functional mobile app as their final project.`,
+    description: `Project Nexus’ oath-taking ceremony with Dean Dr. Ronald Ediberto A. Ona, alongside our dedicated officers and members. A meaningful moment as we officially stepped into leadership, innovation, and service.`,
+    
     technologies: [],
-    category: "attended"
+    category: "conducted"
   },
   
   2: {
@@ -33,9 +33,13 @@ const events = {
       "assets/img/portfolio/sync-deploy/sd-3.png",
       "assets/img/portfolio/sync-deploy/sd-2.png"
     ],
-    description: `Intensive training on Docker containers, Docker Compose, and deployment strategies for modern applications.`,
-    fullDescription: `Members learned containerization concepts, creating Docker images, managing containers, networking, volumes, and orchestration basics. The bootcamp included real-world scenarios of deploying microservices, CI/CD integration, and container security best practices.`,
-    technologies: ["Docker", "Containers", "DevOps", "Microservices"],
+    description: `Sync & Deploy is a hands-on, project-based workshop by Project Nexus designed to prepare students for real-world collaborative software development. Conducted on October 24, 2025 at the Research Laboratory, NIT Building, Palawan State University, the program focuses on transitioning Nexians into project-ready contributors within the Bantay-Klima project environment.
+
+The workshop uses an intensive 1-on-2 mentorship structure that emphasizes practical application over theory. `,
+    fullDescription: `Participants work directly on the Bantay-Klima codebase, learning modern development workflows such as trunk-based Git version control (git pull --rebase), atomic commit practices, simulated peer code reviews, and the application of the Nexus Style Guide in Python/Django development.
+
+Beyond tools, Sync & Deploy develops essential collaboration skills. Trainees configure real Django environments, resolve merge conflicts, and participate in pair-programming activities that strengthen teamwork, problem-solving, and production readiness. By the end of the program, participants are assessed and classified as “Project-Ready”, enabling them to contribute meaningfully to active Project Nexus systems and deployments.`,
+    technologies: ["Python", "Django", "Git", "Github", "Version Control", "Html","css"],
     category: "conducted"
   },
 
@@ -52,8 +56,10 @@ const events = {
       "assets/img/portfolio/annual-meeting2026/meeting-2.jpg",
       
     ],
-    description: `Project Nexus members participated in AWS certification training to enhance cloud computing skills and infrastructure knowledge.`,
-    fullDescription: `This intensive training covered AWS core services including EC2, S3, RDS, Lambda, and CloudFormation. Participants gained hands-on experience with cloud architecture, security best practices, and cost optimization strategies. The training prepared members for the AWS Certified Cloud Practitioner exam.`,
+    description: `The Project Nexus Organizational Meeting, held on January 22, 2026 at the New IT Building (NIT4), brought members together to align on project progress, upcoming collaborations, and technical training initiatives.
+
+The session covered updates on active systems such as the Certificate Sender, progress reports on learning programs like The Byte-Sized Journey and the IT Freshman Toolkit, and planning for new partnerships including the proposed PhilPost Authority collaboration. `,
+    fullDescription: `Logistics for upcoming skill-building activities—such as Flutter and React JS training and a 3D Printing workshop—were also finalized to ensure continuous upskilling within Project Nexus.`,
     technologies: [],
     category: "conducted"
     },
@@ -76,8 +82,9 @@ const events = {
       "assets/img/portfolio/freshmanToolkit/toolkit-6.jpg",
       
     ],
-    description: `A comprehensive workshop covering HTML5, CSS3, JavaScript ES6+, and responsive design principles for beginners. This hands-on training aims to equip Computer Science students with fundamental web development skills essential for modern web applications.`,
-    fullDescription: `Participants learned about semantic HTML, CSS flexbox and grid systems, JavaScript DOM manipulation, and best practices for creating responsive websites that work across all devices. The workshop included hands-on exercises and a final project where students built their own portfolio websites.`,
+    description: `The IT Freshman TOOLKIT is a two-day collaborative workshop by Project Nexus and SITE, conducted on January 6–7, 2026, for incoming BS IT freshmen preparing to take Programming 2. The program is designed to bridge the gap between foundational and advanced programming by combining remediation, early exposure, and algorithmic training.
+.`,
+    fullDescription: `Participants undergo a guided review of key Programming 1 topics, are introduced to advanced concepts such as object-oriented programming, recursion, and data structures, and are trained in algorithmic thinking through LeetCode challenges. Through hands-on instruction and mentoring, the workshop strengthens students’ technical readiness, problem-solving ability, and confidence for higher-level programming courses`,
     technologies: ["Python", "Leetcode", "Programming"],
     category: "conducted"
   },
