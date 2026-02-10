@@ -34,8 +34,8 @@ const projects = {
       "assets/img/portfolio/certMailerSystem/mailer-2.png",
 
     ],
-    description: `Machine learning model for sentiment analysis of Filipino social media posts using natural language processing.`,
-    fullDescription: `An advanced machine learning project that analyzes sentiment in Filipino text, including Tagalog and Taglish (mixed Filipino-English). The system was trained on thousands of social media posts and can accurately classify text as positive, negative, or neutral. Applications include brand monitoring, customer feedback analysis, and social media trend detection. The model achieved 87% accuracy on test data, addressing the unique challenges of Filipino language sentiment analysis.`,
+    description: `The Certificate Mailer System is an automated web-based platform developed by Project Nexus member Reymart O. dela Cruz to streamline the distribution of official academic documents such as Certificates of Registration (COR). The system integrates secure database management with automated mailing protocols to ensure sensitive student records are delivered directly to verified institutional email addresses.`,
+    fullDescription: `Designed to support contactless and efficient student services, the platform minimizes manual processing while improving turnaround time for academic offices. The system has been successfully extended to the College of Business and Accountancy, enhancing document delivery workflows while maintaining data security and service reliability across units.`,
     technologies: ["Python", "Django", "HTML", "CSS", "Git"],
     techCategory: "ai",
     projectCategory: "member"
