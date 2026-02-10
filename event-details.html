@@ -41,7 +41,6 @@
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
-          <li><a href="what-we-do.html">What We Do</a></li>
           <li><a href="trainings-events.html">Training & Events</a></li>
           <li><a href="projects.html">Projects</a></li>
           <li><a href="team.html">Team</a></li>
@@ -194,7 +193,7 @@
 
       // Populate event info
       const eventInfo = document.getElementById('event-info');
-      const categoryLabel = event.category === 'conducted' ? 'conducted' : 'attended';
+      const categoryLabel = event.category === 'conducted' ? 'We Conduct' : 'We attend';
       eventInfo.innerHTML = `
         <li><strong>Event Type</strong>: ${categoryLabel}</li>
         <li><strong>Date</strong>: ${event.date}</li>
