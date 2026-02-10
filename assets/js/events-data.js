@@ -54,7 +54,6 @@ Beyond tools, Sync & Deploy develops essential collaboration skills. Trainees co
     images: [
       "assets/img/portfolio/annual-meeting2026/meeting-1.jpg",
       "assets/img/portfolio/annual-meeting2026/meeting-2.jpg",
-      
     ],
     description: `The Project Nexus Organizational Meeting, held on January 22, 2026 at the New IT Building (NIT4), brought members together to align on project progress, upcoming collaborations, and technical training initiatives.
 
