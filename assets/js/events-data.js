@@ -50,7 +50,6 @@ const events = {
     images: [
       "assets/img/portfolio/annual-meeting2026/meeting-1.jpg",
       "assets/img/portfolio/annual-meeting2026/meeting-2.jpg",
-      
     ],
     description: `Project Nexus members participated in AWS certification training to enhance cloud computing skills and infrastructure knowledge.`,
     fullDescription: `This intensive training covered AWS core services including EC2, S3, RDS, Lambda, and CloudFormation. Participants gained hands-on experience with cloud architecture, security best practices, and cost optimization strategies. The training prepared members for the AWS Certified Cloud Practitioner exam.`,
