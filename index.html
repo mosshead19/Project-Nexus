@@ -41,14 +41,14 @@
     #hero::before {
       content: '';
       position: absolute;
-      top: -40%;
-      left: -20%;
-      width: 70%;
-      height: 70%;
-      background: radial-gradient(circle, rgba(0, 163, 169, 0.5) 0%, rgba(0, 163, 169, 0.3) 40%, transparent 70%);
-      border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-      filter: blur(80px);
-      animation: blobMorph1 25s ease-in-out infinite alternate;
+      top: -10%;
+      left: -15%;
+      width: 55%;
+      height: 55%;
+      background: radial-gradient(circle, rgba(64, 224, 208, 0.35) 0%, rgba(100, 200, 230, 0.2) 50%, transparent 80%);
+      border-radius: 50% 50% 50% 50%;
+      filter: blur(90px);
+      animation: blobMorph1 28s ease-in-out infinite alternate;
       pointer-events: none;
       z-index: 0;
     }
@@ -56,14 +56,14 @@
     #hero::after {
       content: '';
       position: absolute;
-      bottom: -30%;
-      right: -10%;
-      width: 60%;
-      height: 60%;
-      background: radial-gradient(circle, rgba(64, 224, 208, 0.5) 0%, rgba(64, 224, 208, 0.3) 40%, transparent 70%);
-      border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-      filter: blur(70px);
-      animation: blobMorph2 20s ease-in-out infinite alternate;
+      bottom: -20%;
+      right: -20%;
+      width: 70%;
+      height: 70%;
+      background: radial-gradient(circle, rgba(0, 163, 169, 0.4) 0%, rgba(64, 224, 208, 0.25) 50%, transparent 80%);
+      border-radius: 50% 50% 50% 50%;
+      filter: blur(100px);
+      animation: blobMorph2 25s ease-in-out infinite alternate;
       pointer-events: none;
       z-index: 0;
     }
@@ -76,88 +76,142 @@
     }
 
     .blob-1 {
-      top: 15%;
-      right: 15%;
-      width: 45%;
-      height: 45%;
-      background: radial-gradient(circle, rgba(0, 163, 169, 0.45) 0%, rgba(0, 163, 169, 0.25) 40%, transparent 70%);
-      border-radius: 40% 60% 60% 40% / 40% 40% 60% 60%;
-      animation: blobMorph3 22s ease-in-out infinite alternate;
+      top: 20%;
+      right: 10%;
+      width: 50%;
+      height: 50%;
+      background: radial-gradient(circle, rgba(56, 189, 248, 0.3) 0%, rgba(64, 224, 208, 0.2) 50%, transparent 80%);
+      border-radius: 50% 50% 50% 50%;
+      animation: blobMorph3 30s ease-in-out infinite alternate;
     }
 
     .blob-2 {
-      bottom: 5%;
-      left: 0%;
-      width: 40%;
-      height: 40%;
-      background: radial-gradient(circle, rgba(56, 189, 248, 0.5) 0%, rgba(56, 189, 248, 0.3) 40%, transparent 70%);
-      border-radius: 70% 30% 30% 70% / 60% 40% 60% 40%;
-      animation: blobMorph4 18s ease-in-out infinite alternate;
+      bottom: 10%;
+      left: 5%;
+      width: 45%;
+      height: 45%;
+      background: radial-gradient(circle, rgba(0, 163, 169, 0.35) 0%, rgba(56, 189, 248, 0.2) 50%, transparent 80%);
+      border-radius: 50% 50% 50% 50%;
+      animation: blobMorph4 26s ease-in-out infinite alternate;
     }
 
     .blob-3 {
-      top: 55%;
-      left: 25%;
-      width: 35%;
-      height: 35%;
-      background: radial-gradient(circle, rgba(64, 224, 208, 0.5) 0%, rgba(64, 224, 208, 0.3) 40%, transparent 70%);
-      border-radius: 30% 70% 50% 50% / 50% 30% 70% 50%;
-      animation: blobMorph5 24s ease-in-out infinite alternate;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 60%;
+      height: 60%;
+      background: radial-gradient(circle, rgba(64, 224, 208, 0.25) 0%, rgba(100, 200, 230, 0.15) 50%, transparent 80%);
+      border-radius: 50% 50% 50% 50%;
+      animation: blobMorph5 32s ease-in-out infinite alternate;
+    }
+
+    .blob-4 {
+      top: 0%;
+      right: 0%;
+      width: 40%;
+      height: 40%;
+      background: radial-gradient(circle, rgba(100, 200, 230, 0.3) 0%, rgba(64, 224, 208, 0.18) 50%, transparent 80%);
+      border-radius: 50% 50% 50% 50%;
+      animation: blobMorph6 22s ease-in-out infinite alternate;
     }
 
     @keyframes blobMorph1 {
-      0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; transform: translate(0, 0) rotate(0deg); }
-      33% { border-radius: 50% 50% 20% 80% / 25% 80% 20% 75%; transform: translate(10%, 5%) rotate(5deg); }
-      66% { border-radius: 70% 30% 50% 50% / 50% 30% 70% 50%; transform: translate(-5%, 10%) rotate(-5deg); }
-      100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; transform: translate(0, 0) rotate(0deg); }
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(5%, 8%) scale(1.05); }
     }
 
     @keyframes blobMorph2 {
-      0% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; transform: translate(0, 0) rotate(0deg); }
-      50% { border-radius: 40% 60% 70% 30% / 40% 50% 30% 50%; transform: translate(-10%, -5%) rotate(10deg); }
-      100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; transform: translate(0, 0) rotate(0deg); }
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(-8%, -5%) scale(1.08); }
     }
 
     @keyframes blobMorph3 {
-      0% { border-radius: 40% 60% 60% 40% / 40% 40% 60% 60%; transform: translate(0, 0); }
-      50% { border-radius: 60% 40% 30% 70% / 50% 30% 60% 50%; transform: translate(-15%, 15%); }
-      100% { border-radius: 40% 60% 60% 40% / 40% 40% 60% 60%; transform: translate(0, 0); }
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(-10%, 10%) scale(1.06); }
     }
 
     @keyframes blobMorph4 {
-      0% { border-radius: 70% 30% 30% 70% / 60% 40% 60% 40%; transform: translate(0, 0); }
-      50% { border-radius: 30% 70% 60% 40% / 50% 60% 30% 40%; transform: translate(10%, -10%); }
-      100% { border-radius: 70% 30% 30% 70% / 60% 40% 60% 40%; transform: translate(0, 0); }
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(8%, -8%) scale(1.04); }
     }
 
     @keyframes blobMorph5 {
-      0% { border-radius: 30% 70% 50% 50% / 50% 30% 70% 50%; transform: translate(0, 0); }
-      50% { border-radius: 50% 50% 20% 80% / 25% 80% 20% 75%; transform: translate(-5%, -15%); }
-      100% { border-radius: 30% 70% 50% 50% / 50% 30% 70% 50%; transform: translate(0, 0); }
+      0%, 100% { transform: translate(-50%, -50%) scale(1); }
+      50% { transform: translate(-48%, -52%) scale(1.1); }
+    }
+
+    @keyframes blobMorph6 {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(-5%, 5%) scale(1.07); }
+    }
+
+    /* Network Canvas */
+    #networkCanvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      pointer-events: none;
     }
 
     #hero .container {
       position: relative;
-      z-index: 1;
+      z-index: 10;
     }
     
-    /* Ensure text is readable over blobs */
-    #hero h2 {
+    /* Improved Hero Typography */
+    #hero .hero-title {
       color: #04124a;
-      text-shadow: 0 0 20px rgba(255, 255, 255, 0.9);
+      font-size: 3.5rem;
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+      text-shadow: 0 2px 20px rgba(255, 255, 255, 0.8);
     }
     
-    #hero p {
-      color: #04124a; 
-      font-weight: 500;
-      text-shadow: 0 0 10px rgba(255, 255, 255, 0.9);
+    #hero .hero-subtitle {
+      color: #265254;
+      font-size: 1.25rem;
+      font-weight: 400;
+      line-height: 1.8;
+      max-width: 800px;
+      margin: 0 auto;
+      text-shadow: 0 1px 10px rgba(255, 255, 255, 0.9);
     }
 
-    #hero .btn-get-started,
-    #hero .btn-getstarted {
+    #hero .btn-get-started {
       position: relative;
       z-index: 1;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      font-size: 1.1rem;
+      padding: 14px 36px;
+      font-weight: 600;
+      color: #ffffff !important;
+    }
+
+    /* Responsive Typography */
+    @media (max-width: 768px) {
+      #hero .hero-title {
+        font-size: 2.5rem;
+      }
+      
+      #hero .hero-subtitle {
+        font-size: 1.1rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      #hero .hero-title {
+        font-size: 2rem;
+      }
+      
+      #hero .hero-subtitle {
+        font-size: 1rem;
+      }
     }
   </style>
 
@@ -191,7 +245,7 @@
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
-      <a class="cta-btn" href="index.html#about">Learn More</a>
+      <a class="cta-btn" href="about.html">Learn More</a>
 
     </div>
   </header>
@@ -203,16 +257,18 @@
 
       <!-- Gradient Blob Decorations -->
       <div class="blob-decoration blob-1"></div>
+      <div class="blob-decoration blob-2"></div>
+      <div class="blob-decoration blob-3"></div>
+      <div class="blob-decoration blob-4"></div>
       
-      
+      <!-- Network Canvas -->
+      <canvas id="networkCanvas"></canvas>
 
-      <div class="container d-flex flex-column align-items-center">
-        <h2 data-aos="fade-up" data-aos-delay="100">PLAN. LAUNCH. GROW.</h2>
-        <p data-aos="fade-up" data-aos-delay="200">We are team of talented designers making websites with Bootstrap</p>
+      <div class="container d-flex flex-column align-items-center text-center">
+        <h2 data-aos="fade-up" data-aos-delay="100" class="hero-title">Building the Next-Us of Developers.</h2>
+        <p data-aos="fade-up" data-aos-delay="200" class="hero-subtitle">Project Nexus equips Palawan State University(PALSU) Computer Science and IT students with hands-on training, collaborative projects, and real-world deployments that bridge classroom learning with industry practice.</p>
         <div class="d-flex align-items-center gap-3 mt-4" data-aos="fade-up" data-aos-delay="300">
-          <a href="#about" class="btn-get-started">Learn More</a>
-          <a href="#projects" class="btn-getstarted d-flex align-items-center"> <i class="bi bi-folder2-open me-2"></i><span>View Projects</span>
-</a>
+          <a href="about.html" class="btn-get-started">Learn More</a>
         </div>
       </div>
 
@@ -1073,7 +1129,7 @@
 
     </section><!-- /Contact Section -->
 
-  </main>
+  </main><!-- End Main Content -->
 
   <footer id="footer" class="footer dark-background">
 
@@ -1164,6 +1220,9 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <!-- Network Animation Script for Hero Section -->
+  <script src="assets/js/network-animation.js"></script>
 
 </body>
 
