@@ -52,11 +52,11 @@
 
     // Configuration
     const BALL_NUM = 30;
-    const R = 2.5; // Particle radius
+    const R = 3.5; // Particle radius
     const balls = [];
-    const alpha_f = 0.03;
-    const link_line_width = 1;
-    const dis_limit = 260;
+    const alpha_f = 0.015; // Slower pulsing
+    const link_line_width = 1.7;
+    const dis_limit = 280;
     
     // YOUR COLOR THEME - turquoise/cyan instead of yellow-green
     const ball_colors = [
@@ -90,17 +90,17 @@
     }
 
     function getRandomSpeed(pos) {
-      const min = -1;
-      const max = 1;
+      const min = -0.4; 
+      const max = 0.4;  
       switch(pos) {
         case 'top':
-          return [randomNumFrom(min, max), randomNumFrom(0.1, max)];
+          return [randomNumFrom(min, max), randomNumFrom(0.05, max)];
         case 'right':
-          return [randomNumFrom(min, -0.1), randomNumFrom(min, max)];
+          return [randomNumFrom(min, -0.05), randomNumFrom(min, max)];
         case 'bottom':
-          return [randomNumFrom(min, max), randomNumFrom(min, -0.1)];
+          return [randomNumFrom(min, max), randomNumFrom(min, -0.05)];
         case 'left':
-          return [randomNumFrom(0.1, max), randomNumFrom(min, max)];
+          return [randomNumFrom(0.05, max), randomNumFrom(min, max)];
         default:
           return [0, 0];
       }
