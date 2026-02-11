@@ -111,6 +111,16 @@
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
 }
 
+.btn-primary {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+  background-color: color-mix(in srgb, var(--accent-color), black 10%) !important;
+  border-color: color-mix(in srgb, var(--accent-color), black 10%) !important;
+}
+
 /* Smooth scroll */
 :root {
   scroll-behavior: smooth;
