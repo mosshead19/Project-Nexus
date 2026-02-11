@@ -1758,16 +1758,7 @@ section,
   padding-bottom: 10px;
 }
 
-.team .member h4::after {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 50px;
-  height: 1px;
-  background: color-mix(in srgb, var(--default-color), transparent 60%);
-  bottom: 0;
-  left: 0;
-}
+
 
 .team .member span {
   font-style: italic;
@@ -1781,7 +1772,7 @@ section,
   bottom: 15px;
 }
 
-.team .member .social a {
+/* .team .member .social a {
   transition: color 0.3s;
   color: color-mix(in srgb, var(--default-color), transparent 70%);
 }
@@ -1790,10 +1781,10 @@ section,
   color: var(--accent-color);
 }
 
-.team .member .social i {
+/* .team .member .social i {
   font-size: 16px;
   margin: 0 2px;
-}
+} */ */
 
 /*--------------------------------------------------------------
 # Contact Section
