@@ -126,6 +126,47 @@
   scroll-behavior: smooth;
 }
 
+/*Countdown timer */
+.countdown-timer-box {
+  background: linear-gradient(135deg, #04124a 0%, #00a3a9 100%);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+
+.countdown-timer-box .time-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 5px;
+}
+
+.countdown-timer-box .time-val {
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.countdown-timer-box .time-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  opacity: 0.8;
+  margin-top: 4px;
+}
+
+.countdown-timer-box .countdown-title {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
 /*--------------------------------------------------------------
 # General Styling & Shared Classes
 --------------------------------------------------------------*/
@@ -674,6 +715,13 @@ h6 {
 .footer .footer-about .logo img {
   max-height: 40px;
   margin-right: 6px;
+}
+
+/* footer logo */
+.footer .footer-about .logo img.footer-logo {
+  filter: brightness(0) invert(1);
+  max-height: 60px;
+  margin-left: -10px;
 }
 
 .footer .footer-about .logo span {
