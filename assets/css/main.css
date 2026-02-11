@@ -40,7 +40,7 @@
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
 
 .light-background {
-  --background-color: #d8d8d8;
+  --background-color: #f0f0f0;
   --surface-color: #ffffff;
 }
 .white-background {
@@ -889,22 +889,45 @@ h6 {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  padding: 160px 0 80px 0;
+  padding: 180px 0 100px 0;
   text-align: center;
   position: relative;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .page-title:before {
   content: "";
-  background: color-mix(in srgb, var(--background-color), transparent 30%);
+  background: linear-gradient(135deg, color-mix(in srgb, var(--background-color), black 20%), color-mix(in srgb, var(--background-color), white 10%));
   position: absolute;
   inset: 0;
+  opacity: 0.9;
+  z-index: 1;
+}
+
+
+.page-title .container {
+  position: relative;
+  z-index: 2;
 }
 
 .page-title h1 {
-  font-size: 42px;
-  font-weight: 700;
-  margin-bottom: 10px;
+  font-size: 48px;
+  font-weight: 800;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.page-title p {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 0;
+  opacity: 0.9;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .page-title .breadcrumbs ol {
@@ -912,10 +935,12 @@ h6 {
   flex-wrap: wrap;
   list-style: none;
   justify-content: center;
-  padding: 0;
+  padding: 20px 0 0 0;
   margin: 0;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .page-title .breadcrumbs ol li+li {
