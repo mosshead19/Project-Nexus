@@ -114,7 +114,7 @@
       left: 0;
       right: 0;
       height: 4px;
-      background: linear-gradient(90deg, var(--accent-color), #5fbdff);
+      background: linear-gradient(90deg, var(--accent-color), #00d4db);
       transform: scaleX(0);
       transform-origin: left;
       transition: transform 0.4s ease;
@@ -127,7 +127,7 @@
       box-shadow: 0 15px 40px rgba(0,0,0,0.1);
     }
     .mission-box .icon, .vision-box .icon {
-      background: linear-gradient(135deg, var(--accent-color), #5fbdff);
+      background: linear-gradient(135deg, var(--accent-color), #00d4db);
       width: 72px;
       height: 72px;
       display: flex;
@@ -135,7 +135,7 @@
       justify-content: center;
       border-radius: 14px;
       margin-bottom: 1.5rem;
-      box-shadow: 0 8px 20px rgba(64, 158, 255, 0.25);
+      box-shadow: 0 8px 20px rgba(0, 163, 169, 0.25);
     }
     .mission-box .icon svg, .vision-box .icon svg {
       color: #fff;
@@ -166,13 +166,49 @@
       border: 1px solid rgba(0,0,0,0.03);
       text-align: center;
     }
-    .values .service-item:hover {
+    /* History Section Styling */
+    .history .section-title h2::after {
+      display: none;
+    }
+    .history .content {
+      background: #fff;
+      padding: 2.5rem;
+      border-radius: 12px;
+      box-shadow: 0 3px 20px rgba(0,0,0,0.06);
+      border-left: 4px solid var(--accent-color);
+      transition: all 0.3s ease;
+    }
+    .history .content:hover {
+      transform: translateX(5px);
+      box-shadow: 0 5px 30px rgba(0,0,0,0.1);
+    }
+    .history .content h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+      color: var(--heading-color);
+    }
+    .history .content h3 i {
+      color: var(--accent-color);
+      font-size: 1.4rem;
+    }
+    .history .content p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: #555;
+      margin-bottom: 1rem;
+    }
+    .history .content p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Core Values Enhanced Grid */    .values .service-item:hover {
       transform: translateY(-5px);
       box-shadow: 0 10px 30px rgba(0,0,0,0.1);
       border-color: var(--accent-color);
     }
     .values .service-item .icon {
-      background: linear-gradient(135deg, #f8fbff, #e8f4ff);
+      background: linear-gradient(135deg, #f0feff, #e0fbfc);
       width: 64px;
       height: 64px;
       display: flex;
@@ -183,7 +219,7 @@
       transition: all 0.3s ease;
     }
     .values .service-item:hover .icon {
-      background: linear-gradient(135deg, var(--accent-color), #5fbdff);
+      background: linear-gradient(135deg, var(--accent-color), #00d4db);
       transform: scale(1.05);
     }
     .values .service-item .icon svg {
@@ -238,7 +274,7 @@
       padding: 2rem 1.75rem;
     }
     .services .service-item .details .icon {
-      background: linear-gradient(135deg, #f8fbff, #e8f4ff);
+      background: linear-gradient(135deg, #f0feff, #e0fbfc);
       width: 56px;
       height: 56px;
       display: flex;
@@ -249,7 +285,7 @@
       transition: all 0.3s ease;
     }
     .services .service-item:hover .details .icon {
-      background: linear-gradient(135deg, var(--accent-color), #5fbdff);
+      background: linear-gradient(135deg, var(--accent-color), #00d4db);
       transform: scale(1.05);
     }
     .services .service-item .details .icon svg {
@@ -294,7 +330,7 @@
       transform: translateX(-50%);
       width: 60px;
       height: 3px;
-      background: linear-gradient(90deg, var(--accent-color), #5fbdff);
+      background: linear-gradient(90deg, var(--accent-color), #00d4db);
       border-radius: 2px;
     }
     .section-title p {
@@ -420,8 +456,44 @@
 
     </section><!-- /About Section -->
 
+    <!-- History and Rationale Section -->
+    <section id="history" class="history section light-background">
+
+      <div class="container section-title" data-aos="fade-up">
+        <h2>History and Rationale of Project Nexus</h2>
+        <p>Understanding our foundation and the purpose behind our establishment</p>
+      </div>
+
+      <div class="container">
+
+        <div class="row gy-5">
+
+          <!-- Academic Context -->
+          <div class="col-lg-12" data-aos="fade-up" data-aos-delay="100">
+            <div class="content">
+              <h3><i class="bi bi-mortarboard-fill me-2"></i>Academic Context and Precursors</h3>
+              <p>Project Nexus is formally established under the auspices of the institution's academic structure, drawing its membership primarily from students enrolled in the Bachelor of Science in Information Technology (BSIT) and Bachelor of Science in Computer Science (BSCS) programs, which are currently housed within the College of Sciences.</p>
+              <p>The foundation for Project Nexus began with the notable involvement of selected students from both programs in various Research and Extension (R&E) projects. These pioneering activities were conducted under the guidance and supervision of faculty members belonging to the former Computer Studies Department (CSD), which served as the academic home for IT and CS programs prior to the recent departmental reorganization. The experience gained in these early projects highlighted the immense talent and capability of the student body in contributing meaningfully to real-world application development.</p>
+            </div>
+          </div>
+
+          <!-- The Genesis -->
+          <div class="col-lg-12" data-aos="fade-up" data-aos-delay="200">
+            <div class="content">
+              <h3><i class="bi bi-lightning-fill me-2"></i>The Genesis of Project Nexus</h3>
+              <p>The critical impetus for the formal establishment of Project Nexus was the significant increase in the number of complex application development projects flowing into the department, requiring a structured, sustainable, and skilled student body to handle them. It became evident that a dedicated student organization was necessary to harness this energy, standardize training, and ensure the continuous development of high-quality software solutions.</p>
+              <p>Founded with a clear mission, Project Nexus aims to empower students with a passion for programming, focusing specifically on software development. The organization serves as a central hub for collaborative learning, project execution, and the cultivation of industry-ready skills, bridging the gap between academic theory and practical, large-scale application deployment.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /History and Rationale Section -->
+
     <!-- Mission Vision Section -->
-    <section id="mission-vision" class="mission-vision section light-background">
+    <section id="mission-vision" class="mission-vision section">
 
       <div class="container">
 
