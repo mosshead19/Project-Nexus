@@ -1,7 +1,7 @@
 const Countdown = {
   /**
    * Initialize a countdown timer
-   * @param {string} dateString - "Feb 13, 2026 08:00:00"
+   * @param {string} dateString - "Ex: Feb 13, 2026 08:00:00"
    * @param {string} containerId - ID of the container element
    * @param {Object} elementIds - Optional mapping for day/hour/min/sec element IDs
    */
@@ -14,7 +14,7 @@ const Countdown = {
     };
 
     const countDownDate = new Date(dateString).getTime();
-    
+    const eventEndDate = countDownDate + (10 * 60 * 60 * 1000); // 10 hours after event starts
     const container = document.getElementById(containerId);
     if (!container) return; // Exit if container doesn't exist
 
@@ -42,10 +42,16 @@ const Countdown = {
       if (elMinutes) elMinutes.innerText = minutes < 10 ? "0" + minutes : minutes;
       if (elSeconds) elSeconds.innerText = seconds < 10 ? "0" + seconds : seconds;
 
-      // If the count down is finished
-      if (distance < 0) {
+      // If 10 hours has passed after
+      if (now > eventEndDate) {
         clearInterval(x);
         if (container) {
+           container.innerHTML = "<div class='display-6 fw-bold text-uppercase'>Event Ended</div>";
+        }
+      }
+      
+      else if (distance < 0) {
+        if (container && !container.innerHTML.includes("Event Started")) {
            container.innerHTML = "<div class='display-6 fw-bold text-uppercase'>Event Started</div>";
         }
       }
