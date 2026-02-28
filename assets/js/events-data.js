@@ -1,4 +1,39 @@
-// Events Data
+// ─────────────────────────────────────────────────────────────────────────────
+// UPCOMING EVENTS
+// To future students
+// To add a new upcoming event, copy the template entry, uncomment it, and
+// fill in the fields. No hardcoding of HTML needed
+//
+// When the event is done, move it into the `events` object below (add photos,
+// full description, etc.) and delete it from here.
+// ─────────────────────────────────────────────────────────────────────────────
+  // ── TEMPLATE ──────────────────────────────────────────────────────────────
+  // {
+  //   // id: 6,           // id and event should be same value                     // Next number after the last key in events{}
+    // title: "3D Printing Workshop",
+    // startTime: "March 1, 2026 04:20:00",  // "Month DD, YYYY HH:MM:SS"  (24-hr)
+    // duration: "0.1 hours",
+    // location: "NIT 4",
+    // type: "We Conduct",                    // "We Conduct"  OR  "We Attend"
+    // participants: "30+ Students",
+    // description: "Short teaser description shown on the card.",
+  // 
+  // ──  TEMPLATE END ──────────────────────────────────────────────────────────
+const upcomingEvents = [
+  {
+    // id: 6,           // id and event should be same value                     // Next number after the last key in events{}
+    // title: "3D Printing Workshop",
+    // startTime: "March 1, 2026 04:20:00",  // "Month DD, YYYY HH:MM:SS"  (24-hr)
+    // duration: "0.1 hours",
+    // location: "NIT 4",
+    // type: "We Conduct",                    // "We Conduct"  OR  "We Attend"
+    // participants: "30+ Students",
+    // description: "Short teaser description shown on the card.",
+  },
+];
+
+
+// Past Events
 const events = {
   1: {
     title: "Project Nexus Oath Taking",
@@ -95,11 +130,9 @@ The session covered updates on active systems such as the Certificate Sender, pr
     type: "We attend",
     participants: "15 Students",
     duration: "tentative",
-    image: "assets/img/portfolio/branding-1.jpg",
+    image: "assets/img/placeholders/placeholder-post.png",
     images: [
-      "assets/img/portfolio/branding-1.jpg",
-      "assets/img/portfolio/books-1.jpg",
-      "assets/img/portfolio/app-2.jpg"
+      "assets/img/placeholders/placeholder-post.png",
     ],
     description: `Learn version control essentials, branching strategies, pull requests, and collaborative development workflows.`,
     fullDescription: `This workshop covered Git fundamentals including repositories, commits, branches, merges, and conflict resolution. Students learned about GitHub features such as pull requests, code reviews, issues, and project boards. Practical exercises included contributing to open-source projects and team collaboration scenarios.`,
