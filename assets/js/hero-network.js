@@ -38,25 +38,42 @@
     const ctx = canvas.getContext('2d');
     let canvasWidth, canvasHeight;
 
+    // Configuration
+    let BALL_NUM = 30;
+    const R = 3.5; // Particle radius
+    const balls = [];
+    const alpha_f = 0.015; // Slower pulsing
+    const link_line_width = 1.7;
+    let dis_limit = 280;
+    
+    // If width change
+    function updateConfig() {
+      if (canvasWidth < 576) {
+        BALL_NUM = 10;
+        dis_limit = 150;
+      } else if (canvasWidth < 768) {
+        BALL_NUM = 15;
+        dis_limit = 200;
+      } else if (canvasWidth < 992) {
+        BALL_NUM = 20;
+        dis_limit = 240;
+      } else {
+        BALL_NUM = 30;
+        dis_limit = 280;
+      }
+    }
+
     function resizeCanvas() {
       canvas.width = heroSection.offsetWidth;
       canvas.height = heroSection.offsetHeight;
       canvasWidth = canvas.width;
       canvasHeight = canvas.height;
+      updateConfig();
     }
     resizeCanvas();
     window.addEventListener('resize', () => {
-      console.log('Window Resize...');
       resizeCanvas();
     });
-
-    // Configuration
-    const BALL_NUM = 30;
-    const R = 3.5; // Particle radius
-    const balls = [];
-    const alpha_f = 0.015; // Slower pulsing
-    const link_line_width = 1.7;
-    const dis_limit = 280;
     
     // YOUR COLOR THEME - turquoise/cyan instead of yellow-green
     const ball_colors = [
@@ -185,11 +202,14 @@
     function renderLines() {
       for (let i = 0; i < balls.length; i++) {
         for (let j = i + 1; j < balls.length; j++) {
-          const fraction = getDisOf(balls[i], balls[j]) / dis_limit;
+          const distance = getDisOf(balls[i], balls[j]);
+          const fraction = distance / dis_limit;
           
           if (fraction < 1) {
             const alpha = (1 - fraction).toString();
-            ctx.strokeStyle = `rgba(0, 163, 169, ${alpha * 0.5})`;
+            // Check width and adjust opacity
+            const opacityMultiplier = canvasWidth < 768 ? 0.3 : 0.5;
+            ctx.strokeStyle = `rgba(0, 163, 169, ${alpha * opacityMultiplier})`;
             ctx.lineWidth = link_line_width;
             
             ctx.beginPath();
@@ -209,10 +229,22 @@
       return Math.sqrt(delta_x * delta_x + delta_y * delta_y);
     }
 
-    // Add balls if needed
-    function addBallIfy() {
-      if (balls.length < BALL_NUM) {
+    // Manage balls count
+    function manageBalls() {
+      // Count current non-mouse balls
+      let nonMouseCount = 0;
+      for(let i=0; i<balls.length; i++){
+        if(!balls[i].hasOwnProperty('type')) nonMouseCount++;
+      }
+      
+      if (nonMouseCount < BALL_NUM) {
         balls.push(getRandomBall());
+      } else if (nonMouseCount > BALL_NUM) {
+        // Remove excess balls gradually
+        const index = balls.findIndex(b => !b.hasOwnProperty('type'));
+        if (index > -1) {
+          balls.splice(index, 1);
+        }
       }
     }
 
@@ -223,7 +255,7 @@
       renderBalls();
       renderLines();
       updateBalls();
-      addBallIfy();
+      manageBalls();
       
       window.requestAnimationFrame(render);
     }
