@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Event Builder — Project Nexus Admin</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Raleway:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap -->
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --accent:   #00a3a9;
+      --heading:  #04124a;
+      --bg:       #f4f8fb;
+      --surface:  #ffffff;
+      --border:   #d0dde8;
+      --code-bg:  #0d1b2a;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: "Roboto", sans-serif;
+      background: var(--bg);
+      color: #222;
+      min-height: 100vh;
+    }
+
+    /* Top bar */
+    .topbar {
+      background: var(--heading);
+      color: #fff;
+      padding: 14px 32px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .topbar .logo {
+      font-family: "Raleway", sans-serif;
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: var(--accent);
+      text-decoration: none;
+      letter-spacing: .5px;
+    }
+    .topbar .divider { opacity: .3; }
+    .topbar h1 {
+      font-size: .95rem;
+      font-weight: 500;
+      margin: 0;
+      opacity: .85;
+    }
+    .topbar .back-link {
+      margin-left: auto;
+      font-size: .85rem;
+      color: rgba(255,255,255,.6);
+      text-decoration: none;
+      transition: color .2s;
+    }
+    .topbar .back-link:hover { color: #fff; }
+
+    /* Layout  */
+    .main-grid {
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 28px;
+      max-width: 1280px;
+      margin: 32px auto;
+      padding: 0 24px 60px;
+    }
+    @media (max-width: 900px) {
+      .main-grid { grid-template-columns: 1fr; }
+    }
+
+    /* Cards */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px 32px;
+      box-shadow: 0 2px 12px rgba(0,0,0,.05);
+    }
+    .card-title {
+      font-family: "Raleway", sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--heading);
+      margin: 0 0 22px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .card-title i { color: var(--accent); }
+
+    /* Form */
+    label {
+      font-size: .82rem;
+      font-weight: 600;
+      color: var(--heading);
+      margin-bottom: 5px;
+      display: block;
+    }
+    label .req { color: #e05; margin-left: 2px; }
+    label .hint {
+      font-weight: 400;
+      color: #888;
+      margin-left: 6px;
+      font-size: .78rem;
+    }
+
+    .form-control, .form-select {
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      font-size: .9rem;
+      padding: 9px 13px;
+      transition: border-color .2s, box-shadow .2s;
+      background: #fafcfe;
+    }
+    .form-control:focus, .form-select:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(0,163,169,.12);
+      background: #fff;
+    }
+    textarea.form-control { resize: vertical; min-height: 80px; }
+
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+    @media (max-width: 600px) {
+      .two-col, .three-col { grid-template-columns: 1fr; }
+    }
+
+    .form-group { margin-bottom: 18px; }
+
+    /* Image preview */
+    .img-path-wrapper { position: relative; }
+    .img-path-wrapper .bi-image {
+      position: absolute;
+      right: 12px; top: 50%; transform: translateY(-50%);
+      color: #aaa; font-size: 1rem; pointer-events: none;
+    }
+
+    .img-thumb {
+      margin-top: 10px;
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 1.5px solid var(--border);
+      display: none;
+      background: #eee;
+    }
+    .img-thumb.visible { display: block; }
+
+    /* Code output */
+    .code-box {
+      background: var(--code-bg);
+      border-radius: 10px;
+      padding: 20px 22px;
+      position: relative;
+      font-family: "Courier New", monospace;
+      font-size: .8rem;
+      line-height: 1.7;
+      color: #cdd6f4;
+      overflow-x: auto;
+      max-height: 340px;
+      overflow-y: auto;
+      white-space: pre;
+    }
+    .copy-btn {
+      position: absolute;
+      top: 12px; right: 12px;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 5px 13px;
+      font-size: .78rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background .2s, transform .1s;
+      display: flex; align-items: center; gap: 5px;
+    }
+    .copy-btn:hover { background: #008f94; }
+    .copy-btn:active { transform: scale(.96); }
+    .copy-btn.copied { background: #22c55e; }
+
+    /* syntax highlight colours */
+    .kw  { color: #cba6f7; }   /* keyword */
+    .str { color: #a6e3a1; }   /* string */
+    .num { color: #fab387; }   /* number */
+    .cmt { color: #6c7086; }   /* comment */
+    .key { color: #89b4fa; }   /* object key */
+
+    /* Instructions */
+    .steps { padding: 0; list-style: none; margin: 0; }
+    .steps li {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 14px;
+      font-size: .88rem;
+      color: #444;
+      line-height: 1.5;
+    }
+    .step-num {
+      min-width: 26px; height: 26px;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 50%;
+      display: grid; place-items: center;
+      font-size: .75rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* Card preview */
+    .preview-label {
+      font-size: .75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .8px;
+      color: #999;
+      margin-bottom: 12px;
+    }
+
+    .preview-card {
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 2px 10px rgba(0,0,0,.07);
+    }
+
+    .preview-img-wrapper {
+      background: var(--heading);
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+
+    /* mini countdown in preview */
+    .mini-countdown { text-align: center; color: #fff; }
+    .mini-countdown .cd-title {
+      font-size: .7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      opacity: .7;
+      margin-bottom: 8px;
+    }
+    .mini-countdown .cd-row {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+      justify-content: center;
+    }
+    .mini-countdown .cd-block {
+      text-align: center;
+    }
+    .mini-countdown .cd-val {
+      display: block;
+      font-size: 1.5rem;
+      font-weight: 700;
+      font-family: "Raleway", sans-serif;
+      color: var(--accent);
+      line-height: 1;
+    }
+    .mini-countdown .cd-lbl {
+      font-size: .6rem;
+      opacity: .6;
+      text-transform: uppercase;
+    }
+    .mini-countdown .sep { font-size: 1.2rem; opacity: .5; padding-bottom: 10px; }
+
+    .preview-info { padding: 18px 20px; }
+    .preview-title {
+      font-family: "Raleway", sans-serif;
+      font-weight: 700;
+      font-size: .95rem;
+      color: var(--heading);
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+    .preview-meta {
+      font-size: .78rem;
+      color: #888;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      align-items: center;
+    }
+    .preview-meta .sep { opacity: .4; }
+    .preview-meta .badge-type {
+      background: rgba(0,163,169,.12);
+      color: var(--accent);
+      border-radius: 20px;
+      padding: 2px 9px;
+      font-weight: 600;
+      font-size: .72rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Top Bar -->
+  <div class="topbar">
+    <h1><i class="bi bi-calendar-plus me-1"></i> Upcoming Event Builder</h1>
+    <a class="back-link" href="../trainings-events.html">
+      <i class="bi bi-arrow-left me-1"></i>Back to Events Page
+    </a>
+  </div>
+
+  <div class="main-grid">
+
+    <!-- LEFT: Form -->
+    <div>
+
+      <div class="card mb-4">
+        <p class="card-title"><i class="bi bi-pencil-square"></i> Event Details</p>
+
+        <div class="form-group">
+          <label>Event Title <span class="req">*</span></label>
+          <input type="text" class="form-control" id="f-title" placeholder="e.g. Nexus Core Training">
+        </div>
+
+        <div class="two-col">
+          <div class="form-group">
+            <label>Start Date &amp; Time <span class="req">*</span> <span class="hint">24-hr</span></label>
+            <input type="datetime-local" class="form-control" id="f-start">
+          </div>
+          <div class="form-group">
+            <label>Duration <span class="req">*</span></label>
+            <input type="text" class="form-control" id="f-duration" placeholder="e.g. 8 hours">
+          </div>
+        </div>
+
+        <div class="two-col">
+          <div class="form-group">
+            <label>Location <span class="req">*</span></label>
+            <input type="text" class="form-control" id="f-location" placeholder="e.g. NIT 4">
+          </div>
+          <div class="form-group">
+            <label>Type <span class="req">*</span></label>
+            <select class="form-select" id="f-type">
+              <option value="We Conduct">We Conduct</option>
+              <option value="We Attend">We Attend</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="two-col">
+          <div class="form-group">
+            <label>Participants <span class="req">*</span></label>
+            <input type="text" class="form-control" id="f-participants" placeholder="e.g. 30+ Students">
+          </div>
+          <div class="form-group">
+            <label>Event ID <span class="req">*</span> <span class="hint">next after last in events{}</span></label>
+            <input type="number" class="form-control" id="f-id" min="1" value="6">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Short Description <span class="hint">shown as teaser on the card</span></label>
+          <textarea class="form-control" id="f-desc" placeholder="A brief teaser of what the event is about..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>
+            Placeholder Image Path
+            <span class="hint">relative to site root, e.g. assets/img/portfolio/branding-1.jpg</span>
+          </label>
+          <div class="img-path-wrapper">
+            <input type="text" class="form-control" id="f-image" placeholder="assets/img/...">
+            <i class="bi bi-image"></i>
+          </div>
+          <img id="img-preview" class="img-thumb" alt="Image preview" src="">
+        </div>
+      </div>
+
+      <!-- Steps -->
+      <div class="card">
+        <p class="card-title"><i class="bi bi-info-circle"></i> How to add this event</p>
+        <ol class="steps">
+          <li>
+            <div class="step-num">1</div>
+            <div>Fill in all fields on the left. The code snippet below updates live as you type.</div>
+          </li>
+          <li>
+            <div class="step-num">2</div>
+            <div>Click <strong>Copy Snippet</strong> and open <code>assets/js/events-data.js</code>.</div>
+          </li>
+          <li>
+            <div class="step-num">3</div>
+            <div>Paste it inside the <code>upcomingEvents = [ ]</code> array at the top of that file.</div>
+          </li>
+          <li>
+            <div class="step-num">4</div>
+            <div>Save. The countdown card appears on <a href="../trainings-events.html" target="_blank">trainings-events.html</a> automatically — no other file needs editing.</div>
+          </li>
+          <li>
+            <div class="step-num">5</div>
+            <div>When the event is done, <strong>delete it from <code>upcomingEvents</code></strong> and add it to the <code>events</code> object with photos and a full description.</div>
+          </li>
+        </ol>
+      </div>
+
+    </div>
+
+    <!-- RIGHT: Output & Preview -->
+    <div>
+
+      <!-- Code Output -->
+      <div class="card mb-4">
+        <p class="card-title"><i class="bi bi-code-slash"></i> Generated Snippet</p>
+        <div style="position:relative">
+          <div class="code-box" id="code-output"></div>
+          <button class="copy-btn" id="copy-btn" onclick="copySnippet()">
+            <i class="bi bi-clipboard"></i> Copy Snippet
+          </button>
+        </div>
+      </div>
+
+      <!-- Card Preview -->
+      <div class="card">
+        <p class="card-title"><i class="bi bi-eye"></i> Card Preview</p>
+        <p class="preview-label">How it will look on the events page</p>
+
+        <div class="preview-card">
+          <div class="preview-img-wrapper">
+            <div class="mini-countdown">
+              <div class="cd-title">Event Starting In</div>
+              <div class="cd-row">
+                <div class="cd-block">
+                  <span class="cd-val" id="prev-days">00</span>
+                  <span class="cd-lbl">Days</span>
+                </div>
+                <span class="sep">:</span>
+                <div class="cd-block">
+                  <span class="cd-val" id="prev-hours">00</span>
+                  <span class="cd-lbl">Hours</span>
+                </div>
+                <span class="sep">:</span>
+                <div class="cd-block">
+                  <span class="cd-val" id="prev-mins">00</span>
+                  <span class="cd-lbl">Mins</span>
+                </div>
+                <span class="sep">:</span>
+                <div class="cd-block">
+                  <span class="cd-val" id="prev-secs">00</span>
+                  <span class="cd-lbl">Secs</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="preview-info">
+            <div class="preview-title" id="prev-title">Event title will appear here</div>
+            <div class="preview-meta">
+              <span>Upcoming</span>
+              <span class="sep">|</span>
+              <span id="prev-participants">—</span>
+              <span class="sep">|</span>
+              <span class="badge-type" id="prev-type">We Conduct</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div><!-- /main-grid -->
+
+  <script>
+    
+    function pad(n) { return String(n).padStart(2, '0'); }
+
+    function formatStartTime(datetimeLocal) {
+      // datetimeLocal = "2026-04-10T08:00"
+      if (!datetimeLocal) return '';
+      const d = new Date(datetimeLocal);
+      if (isNaN(d)) return '';
+      const months = ['January','February','March','April','May','June',
+                      'July','August','September','October','November','December'];
+      return `${months[d.getMonth()]} ${d.getDate()}, ${d.getFullYear()} ${pad(d.getHours())}:${pad(d.getMinutes())}:00`;
+    }
+
+    function escapeStr(s) {
+      return s.replace(/\\/g, '\\\\').replace(/"/g, '\\"');
+    }
+
+    
+    function buildSnippet() {
+      const id    = document.getElementById('f-id').value.trim() || 'X';
+      const title = document.getElementById('f-title').value.trim();
+      const start = formatStartTime(document.getElementById('f-start').value);
+      const dur   = document.getElementById('f-duration').value.trim();
+      const loc   = document.getElementById('f-location').value.trim();
+      const type  = document.getElementById('f-type').value;
+      const pax   = document.getElementById('f-participants').value.trim();
+      const desc  = document.getElementById('f-desc').value.trim();
+      const img   = document.getElementById('f-image').value.trim();
+
+      return `  {
+    id: ${id},
+    title: "${escapeStr(title) || 'Event Title Here'}",
+    startTime: "${start || 'Month DD, YYYY HH:MM:SS'}",
+    duration: "${escapeStr(dur) || '8 hours'}",
+    location: "${escapeStr(loc) || 'NIT 4'}",
+    type: "${type}",
+    participants: "${escapeStr(pax) || '30+ Students'}",
+    description: "${escapeStr(desc)}",${img ? `\n    image: "${escapeStr(img)}",` : ''}
+  },`;
+    }
+
+
+    function highlight(code) {
+      return code
+        .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+        // strings
+        .replace(/"([^"\\]*(\\.[^"\\]*)*)"/g, '<span class="str">"$1"</span>')
+        // numbers (bare)
+        .replace(/:\s*(\d+),/g, (m, n) => m.replace(n, `<span class="num">${n}</span>`))
+        // keys
+        .replace(/^(\s+)(\w+):/gm, '$1<span class="key">$2</span>:')
+        // braces
+        .replace(/[{}]/g, m => `<span class="kw">${m}</span>`);
+    }
+
+    // Preview countdown 
+    let countdownInterval = null;
+
+    function startPreviewCountdown(startTimeStr) {
+      if (countdownInterval) clearInterval(countdownInterval);
+
+      const target = new Date(startTimeStr);
+      if (isNaN(target)) return;
+
+      function tick() {
+        const now  = new Date();
+        const diff = target - now;
+        if (diff <= 0) {
+          clearInterval(countdownInterval);
+          document.getElementById('prev-days').textContent  = '00';
+          document.getElementById('prev-hours').textContent = '00';
+          document.getElementById('prev-mins').textContent  = '00';
+          document.getElementById('prev-secs').textContent  = '00';
+          return;
+        }
+        document.getElementById('prev-days').textContent  = pad(Math.floor(diff / 86400000));
+        document.getElementById('prev-hours').textContent = pad(Math.floor((diff % 86400000) / 3600000));
+        document.getElementById('prev-mins').textContent  = pad(Math.floor((diff % 3600000) / 60000));
+        document.getElementById('prev-secs').textContent  = pad(Math.floor((diff % 60000) / 1000));
+      }
+
+      tick();
+      countdownInterval = setInterval(tick, 1000);
+    }
+
+    // Update everything on any input 
+    function update() {
+      // Code boxx
+      const snippet = buildSnippet();
+      document.getElementById('code-output').innerHTML = highlight(snippet);
+
+      // Preview card
+      const title = document.getElementById('f-title').value.trim();
+      const pax   = document.getElementById('f-participants').value.trim();
+      const type  = document.getElementById('f-type').value;
+
+      document.getElementById('prev-title').textContent        = title || 'Event title will appear here';
+      document.getElementById('prev-participants').textContent  = pax   || '—';
+      document.getElementById('prev-type').textContent          = type;
+
+      // Image thumb
+      const imgPath = document.getElementById('f-image').value.trim();
+      const thumb   = document.getElementById('img-preview');
+      if (imgPath) {
+        thumb.src = '../' + imgPath;
+        thumb.classList.add('visible');
+      } else {
+        thumb.classList.remove('visible');
+      }
+
+      // Countdown
+      const rawDT = document.getElementById('f-start').value;
+      if (rawDT) startPreviewCountdown(rawDT);
+    }
+
+    // ── Copy to clipboard ───────────────────────────────────────
+    function copySnippet() {
+      const text = buildSnippet();
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = document.getElementById('copy-btn');
+        btn.classList.add('copied');
+        btn.innerHTML = '<i class="bi bi-check-lg"></i> Copied!';
+        setTimeout(() => {
+          btn.classList.remove('copied');
+          btn.innerHTML = '<i class="bi bi-clipboard"></i> Copy Snippet';
+        }, 2200);
+      });
+    }
+
+
+    ['f-id','f-title','f-start','f-duration','f-location',
+     'f-type','f-participants','f-desc','f-image'].forEach(id => {
+      document.getElementById(id).addEventListener('input', update);
+    });
+    document.getElementById('f-type').addEventListener('change', update);
+
+
+    update();
+  </script>
+
+</body>
+</html>

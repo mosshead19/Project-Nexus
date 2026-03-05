@@ -2110,3 +2110,217 @@ section,
 .color-pink {
   color: #00a3a9 !important;
 }
+
+/*--------------------------------------------------------------
+# Trainings & Events Page
+--------------------------------------------------------------*/
+.event-filters {
+  margin-bottom: 2rem;
+  gap: 0.5rem;
+}
+
+.event-filters .nav-link {
+  border-radius: 50px;
+  padding: 10px 25px;
+  border: 2px solid #00a3a9;
+  background: transparent;
+  color: #04124a;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.event-filters .nav-link:hover,
+.event-filters .nav-link.active {
+  background: #00a3a9;
+  color: #ffffff;
+}
+
+.event-card {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  background: #ffffff;
+}
+
+.event-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 25px rgba(0, 163, 169, 0.3);
+}
+
+.event-img {
+  position: relative;
+  overflow: hidden;
+  height: 220px;
+}
+
+.event-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.event-card:hover .event-img img {
+  transform: scale(1.1);
+}
+
+.event-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  z-index: 10;
+}
+
+.event-badge.conducted {
+  background: #00a3a9;
+  color: #ffffff;
+}
+
+.event-badge.attended {
+  background: #265254;
+  color: #ffffff;
+}
+
+.event-content {
+  padding: 25px;
+}
+
+.event-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  font-size: 14px;
+  color: #666;
+}
+
+.event-meta i {
+  margin-right: 5px;
+  color: #00a3a9;
+}
+
+.event-content h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  line-height: 1.4;
+}
+
+.event-content h3 a {
+  color: #04124a;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.event-content h3 a:hover {
+  color: #00a3a9;
+}
+
+.event-content p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.tech-tags {
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tech-tags .badge {
+  font-size: 11px;
+  padding: 5px 10px;
+  font-weight: 600;
+}
+
+.event-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+}
+
+.participants {
+  font-size: 14px;
+  color: #666;
+}
+
+.participants i {
+  color: #00a3a9;
+  margin-right: 5px;
+}
+
+.btn-view-details {
+  font-size: 14px;
+  font-weight: 600;
+  color: #00a3a9;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.btn-view-details:hover {
+  color: #04124a;
+}
+
+.btn-view-details i {
+  margin-left: 5px;
+  transition: margin-left 0.3s;
+}
+
+.btn-view-details:hover i {
+  margin-left: 10px;
+}
+
+#cta {
+  padding: 60px 0;
+}
+
+#cta h3 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+#cta p {
+  font-size: 16px;
+  margin-bottom: 0;
+}
+
+#cta .cta-btn {
+  background: #00a3a9;
+  border: 2px solid #00a3a9;
+  color: #ffffff;
+  padding: 12px 40px;
+  border-radius: 50px;
+  font-weight: 700;
+  transition: all 0.3s;
+}
+
+#cta .cta-btn:hover {
+  background: transparent;
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .event-filters {
+    flex-direction: column;
+  }
+
+  .event-filters .nav-link {
+    width: 100%;
+    text-align: center;
+  }
+
+  .event-meta {
+    flex-direction: column;
+    gap: 5px;
+  }
+}

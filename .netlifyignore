@@ -1,0 +1,3 @@
+# files and folders here are excluded in Netlify deployment but remain in github for local use
+
+admin/
